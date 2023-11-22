@@ -1,0 +1,149 @@
+<div class="big-container">
+    <div class="container" [ngClass]="{ 'sign-up-mode': isSignupMode }" (ngSubmit)="LogIn(user.value,pass.value)" >
+        <div class="signin-signup">
+            <form  class="sign-in-form" (ngSubmit)="LogIn(user.value, pass.value)"> 
+                <h2 class="title">Sign in</h2>
+
+                <div class="input-field"  >
+
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" name="username" pInputText title="Enter your username" #user>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" pInputText title="Enter your password" #pass >
+                </div>
+                <input type="submit" value="Login" class="btn"  >
+                <p class="social-text">Or Sign in with social platform</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </form>
+            <form action="" class="sign-up-form">
+                <h2 class="title">Sign up</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Username" >
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" placeholder="Email" >
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+                <input type="submit" value="Sign up" class="btn" >
+                <p class="social-text">Or Sign in with social platform</p>
+                <div class="social-media">
+                    <a href="#" class="social-icon">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </form>
+        </div>
+        <div class="panels-container">
+
+            <div class="panel left-panel">
+           
+                <div class="content" style="margin-top: 20%;" >
+                 
+                    <div class="cube">
+                        <div class="topD"></div>
+                        <div>
+                          <span style="--i:0"></span>
+                          <span style="--i:1"></span>
+                          <span style="--i:2"></span>
+                          <span style="--i:3"></span>
+                        </div>
+                      
+                        <div class="cube2">
+                          <div>
+                            <span style="--i:0"></span>
+                            <span style="--i:1"></span>
+                            <span style="--i:2"></span>
+                            <span style="--i:3"></span>
+                          </div>
+                      
+                          <div class="cube3">
+                            <div class="top3"></div>
+                            <div>
+                              <span style="--i:0"></span>
+                              <span style="--i:1"></span>
+                              <span style="--i:2"></span>
+                              <span style="--i:3"></span>
+                            </div>
+                      
+                          </div>
+                      
+                        </div>
+                      </div>
+                      
+                    <h3>Member of Brand?</h3>
+                  
+                    <button class="btn " id="sign-in-btn" (click)="onSignupClick()">Sign in</button>
+               
+                </div>
+    
+            </div>
+            <div class="panel right-panel">
+                <div class="content" style="margin-top:-20%">
+
+                    <h3>New to Brand?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt
+                        minima iure?</p>
+                    <button class="btn" id="sign-up-btn" (click)="onSignupClick()">Sign up</button>
+                        <div class="cube">
+            <div class="topD"></div>
+            <div>
+              <span style="--i:0"></span>
+              <span style="--i:1"></span>
+              <span style="--i:2"></span>
+              <span style="--i:3"></span>
+            </div>
+          
+            <div class="cube2">
+              <div>
+                <span style="--i:0"></span>
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+              </div>
+          
+              <div class="cube3">
+                <div class="top3"></div>
+                <div>
+                  <span style="--i:0"></span>
+                  <span style="--i:1"></span>
+                  <span style="--i:2"></span>
+                  <span style="--i:3"></span>
+                </div>
+          
+              </div>
+          
+            </div>
+          </div>
+                </div>
+            </div>
+        </div>
+ 

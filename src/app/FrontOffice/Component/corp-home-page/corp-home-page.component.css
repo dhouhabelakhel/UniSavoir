@@ -1,0 +1,61 @@
+.ourjob{
+    padding-top: 14%;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-bottom: 5%;
+}
+.act{
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+ h2{
+    font-size: xx-large;
+    padding: 2%;
+ }
+h1{
+    font-style: italic;
+    font-size: xx-large;
+    font-weight: bold;
+    text-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.act_image{
+    background-image: url('../../../../assets/activities.jpg');
+    height: 50vh;
+    width: 50vh;
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.event_image{
+    background-image: url('../../../../assets/events.jpg');
+    height: 70vh;
+    width: 60vh;
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.about_image{
+    background-image: url('../../../../assets/about.jpg');
+    height: 70vh;
+    width: 60vh;
+    background-size: cover;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.act_description{
+    height: 50vh;
+    width: 70vh;
+    letter-spacing: 1px; 
+    font-size: large;
+  
+}
+main{
+    display: flex;
+    justify-content: space-between;
+}
+.event{
+    margin-top: -10%;
+}
+article{
+    margin-top: -2%;
+    margin-left: 50%;
+}

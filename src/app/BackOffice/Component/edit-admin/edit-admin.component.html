@@ -1,0 +1,45 @@
+<div class="ui container" style="margin-top: 50px;">
+    <div class="ui card">
+      <div class="content">
+        <form [formGroup]="editAdmin" (ngSubmit)="updateAdmin()" class="ui form">
+          <div class="field">
+            <label for="userName">Username</label>
+            <input type="text" formControlName="userName" placeholder="Username" readonly>
+          </div>
+  
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" placeholder="Password">
+          </div>
+  
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" placeholder="Email">
+          </div>
+  
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <input type="text" formControlName="fullName" placeholder="Full Name">
+          </div>
+  
+          <div class="field">
+            <label for="adresse">Address</label>
+            <textarea formControlName="adresse" rows="2" placeholder="Address"></textarea>
+          </div>
+  
+          <div class="field">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" formControlName="phoneNumber" placeholder="Phone Number">
+          </div>
+        
+          <select formControlName="Role" class="field">
+            <option *ngFor="let role of Roles" [value]="role">{{role}}</option>
+          </select>
+  
+          <button type="submit" class="ui primary button" >Submit</button>
+          <button type="button" class="ui button">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

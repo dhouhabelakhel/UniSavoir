@@ -1,0 +1,37 @@
+<div class="container mt-5" style="margin-left: 20%;">
+    <form [formGroup]="profileForm" (ngSubmit)="update()" >
+        <input type="text" formControlName="" hidden>
+
+      <div class="mb-3">
+        <label for="user" class="form-label">User</label>
+        <input type="text" class="form-control" id="user" formControlName="userName">
+      </div>
+  
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" formControlName="password">
+      </div>
+  
+      <div class="mb-3">
+        <label for="user" class="form-label">FullName</label>
+        <input type="text" class="form-control" id="user" formControlName="fullName">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">adresse</label>
+        <input type="email" class="form-control" id="email" formControlName="adresse">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Phone</label>
+        <input type="email" class="form-control" id="email" formControlName="phoneNumber">
+        <input type="text" class="form-control" formControlName="Role" hidden>
+
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  

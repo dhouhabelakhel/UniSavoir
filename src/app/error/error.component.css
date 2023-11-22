@@ -1,0 +1,15 @@
+div {
+   
+    padding: 20px;
+    display: flex;
+    
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  
+  }
+h1,p{
+    font-size: 10vh;
+    font-style: italic;
+    text-shadow: 2px 2px 4px #fd5d93;}

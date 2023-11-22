@@ -1,0 +1,32 @@
+div{
+    max-height:85vh;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+}
+img{
+    max-height: 85vh;
+    filter: blur(2px);
+}
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    color: #fff; 
+}
+
+.carousel-caption h1 {
+    font-weight: bold;
+    font-size: 40px; 
+    letter-spacing: 2px; 
+    line-height: 1.5;
+    font-style: italic;
+ }
+h3{
+    padding: 2%;
+    font-style: italic;
+    font-weight:bold ;
+
+}

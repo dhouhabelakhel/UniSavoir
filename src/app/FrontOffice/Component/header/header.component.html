@@ -1,0 +1,26 @@
+<nav>
+    <div class="ui secondary  menu">
+
+        <img src="favicon.ico" class=" item">
+
+        <a class=" item" routerLink="/home" routerLinkActive="active">Home</a>
+        <a class="item" routerLink="/activities" routerLinkActive="active"> Activities</a>
+        <a class="item" routerLink="/blogs" routerLinkActive="active"> Blogs </a>
+        <a class="item" routerLink="/about" routerLinkActive="active"> About </a>
+        <div class="right menu" *ngIf="role === 'public'">
+            <a class="ui item" routerLink="/login" routerLinkActive="active" (click)="login()">
+                LOGIN
+            </a>
+
+        </div>
+        <div class="right menu" *ngIf="role === 'user'">
+            <a class="ui item" routerLink="profil" routerLinkActive="active">
+                Profil
+            </a>
+            <a class="ui item" routerLinkActive="active" (click)="logout()">
+                LogOut
+            </a>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>

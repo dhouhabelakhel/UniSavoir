@@ -1,0 +1,36 @@
+main{
+    padding: 4%;
+    
+}
+.blog-container{
+    background-color: transparent;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+padding: 3%;
+
+width: 50%;
+margin-left: 50%;
+}
+h1{
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+     font-weight:bold ;
+     font-size: x-large;
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.btn-container{
+    text-align: center;
+    padding: 2%;
+   
+}
+.submit-btn{
+    padding: 1%;
+height: 100%;
+width: 25%;
+border-radius: 2vw;
+background-color: transparent;
+border: none;
+}
+.submit-btn:hover,input:focus,textarea:focus{
+    border:2px solid  #fd5d93;
+    
+}

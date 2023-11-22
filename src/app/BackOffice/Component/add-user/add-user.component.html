@@ -1,0 +1,33 @@
+<div class="ui container" style="margin-top: 50px;">
+    <div class="ui card">
+      <div class="content">
+        <form [formGroup]="AddUser" (ngSubmit)="addUser()" class="ui form">
+          <div class="field">
+            <label for="userName">Username</label>
+            <input type="text" formControlName="userName" placeholder="Username">
+          </div>
+  
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" placeholder="Password">
+          </div>
+  
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" placeholder="Email">
+          </div>
+  
+          
+          <div >
+            <label for="Role">Role</label>
+            <input type="text" formControlName="Role" readonly >
+          </div>
+         
+  
+          <button type="submit" class="ui primary button" >Submit</button>
+          <button type="button" class="ui button">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  

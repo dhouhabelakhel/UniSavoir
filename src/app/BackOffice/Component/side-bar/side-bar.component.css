@@ -1,0 +1,33 @@
+
+body {
+  font-family: 'Arial', sans-serif; 
+}
+
+.sidebar {
+  height: 100vh; 
+  position: fixed; 
+  top: 0;
+  left: 0;
+  z-index: 1; 
+  background-color: #333; 
+  padding-top: 20px; 
+}
+
+.sub-sidebar-container {
+  padding-left: 15px; 
+}
+
+.nav-link {
+  color: #fff; 
+}
+
+.nav-link:hover {
+  background-color: #555; 
+}
+
+hr {
+  border-color: #777; 
+}
+ul li{
+  padding: 10%;
+}

@@ -1,0 +1,4 @@
+<div *ngFor="let blogitem of blogs">
+    <app-blog [blog]="blogitem"></app-blog>
+</div>
+<app-add-form (newBlog)="associer($event)"></app-add-form>

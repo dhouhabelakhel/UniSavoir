@@ -1,0 +1,53 @@
+<form [formGroup]="addAct" (ngSubmit)="addActivitie()">
+    <div class="mb-3">
+        <label for="intitule" class="form-label">Intitule:</label>
+        <input type="text" class="form-control"  name="intitule" formControlName="intitule">
+    </div>
+
+    <div class="mb-3">
+        <label for="photo" class="form-label">Photo :</label>
+        <input type="file" class="form-control"  name="photo" formControlName="photo" (change)="onFileSelected($event)">
+    </div>
+
+    <div class="mb-3">
+        <label for="description" class="form-label">Description:</label>
+        <textarea class="form-control" name="description" formControlName="description"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="prix" class="form-label">Prix:</label>
+        <input type="text" class="form-control"  name="prix" formControlName="prix">
+    </div>
+
+    <div class="mb-3">
+        <label for="nbplace" class="form-label">Nombre de Places:</label>
+        <input type="number" class="form-control"  name="nbplace" formControlName="nbplace">
+    </div>
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input"  name="disponible" formControlName="certification">
+        <label class="form-check-label" for="disponible">certification:</label>
+    </div>
+
+    <div class="mb-3">
+        <label for="date_debut" class="form-label">Date de Début:</label>
+        <input type="date" class="form-control" formControlName="date_debut" name="date_debut">
+    </div>
+
+    <div class="mb-3">
+        <label for="duree" class="form-label">Durée:</label>
+        <input type="text" class="form-control" formControlName="duree"  name="duree">
+    </div>
+
+    <div class="mb-3">
+        <label for="categorie" class="form-label">Catégorie:</label>
+        <input type="text" class="form-control" formControlName="categorie" name="categorie">
+    </div>
+
+    <div class="mb-3">
+        <label for="lieu" class="form-label">Lieu:</label>
+        <input type="text" class="form-control" formControlName="lieu" name="lieu">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
