@@ -1,0 +1,16 @@
+.special-date {
+   background-color: red ;
+  }
+.mat-calendar {
+    max-width: 250px; 
+    font-size: 14px; 
+  }
+  
+  .mat-calendar-table-header th {
+    padding: 8px; 
+  }
+  
+  .mat-calendar-body-cell {
+    padding: 4px; 
+  }
+  
