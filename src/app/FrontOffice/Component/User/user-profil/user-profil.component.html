@@ -1,16 +1,16 @@
-<div>
+<div class="profil">
     <ul>
-        <li><a routerLink="/profil/edit">edit profil</a></li>
+        <li class="edit-profil">
+            <a >Edit Profil</a>
+            <div class="extra-content">
+                <ul>
+                    <li><a routerLink="editinfos">Update info</a></li>
+                    <li><a routerLink="editpassword">Update password</a></li>
+                
+                  </ul>
+            </div>
+        </li>
         <li><a routerLink="/profil/calendar">Calendar</a></li>
     </ul>
 </div>
 <router-outlet></router-outlet>
-
-
-
-
-
-
-
-
-

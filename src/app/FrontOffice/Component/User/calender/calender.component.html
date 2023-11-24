@@ -1,2 +1,25 @@
+<div >
+<div style="margin-left: 82vw;">
 <mat-calendar [dateClass]="dateClass()"></mat-calendar>
-
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Activity</th>
+                <th>Start</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let act of listOfActivities">
+                <td>{{ act.intitule }}</td>
+                <td>{{ act.date_debut }}</td>
+                <td>
+                    <button class="delete-button" (click)="unsubscribe(act.id)">unsubscribe</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

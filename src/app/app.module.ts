@@ -35,10 +35,12 @@ import { UpdateActivitieComponent } from './BackOffice/Component/update-activiti
 import { SettingsComponent } from './BackOffice/Component/settings/settings.component';
 import { AddAdminComponent } from './BackOffice/Component/add-admin/add-admin.component';
 import { UserProfilComponent } from './FrontOffice/Component/User/user-profil/user-profil.component';
-import { EditComponent } from './FrontOffice/Component/User/edit/edit.component';
 import { CalenderComponent } from './FrontOffice/Component/User/calender/calender.component';
 import { EditAdminComponent } from './BackOffice/Component/edit-admin/edit-admin.component';
 import { AddUserComponent } from './BackOffice/Component/add-user/add-user.component';
+import { UserInformationsComponent } from './FrontOffice/Component/User/user-informations/user-informations.component';
+import { UserupdatePasswordComponent } from './FrontOffice/Component/User/edit/userupdate-password/userupdate-password.component';
+import { UserupdateInformationsComponent } from './FrontOffice/Component/User/edit/userupdate-informations/userupdate-informations.component';
 
 @NgModule({
   declarations: [
@@ -69,10 +71,12 @@ import { AddUserComponent } from './BackOffice/Component/add-user/add-user.compo
     SettingsComponent,
     AddAdminComponent,
     UserProfilComponent,
-    EditComponent,
     CalenderComponent,
     EditAdminComponent,
     AddUserComponent,
+    UserInformationsComponent,
+    UserupdatePasswordComponent,
+    UserupdateInformationsComponent,
   ],
   imports: [
     FormsModule, 

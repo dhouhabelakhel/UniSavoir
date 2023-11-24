@@ -1,0 +1,42 @@
+.profil {
+    background-color: transparent;
+    width: 25vw;
+    padding-top: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
+
+}
+
+.profil ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.profil ul li {
+    padding: 10px 20px;
+    transition: background-color 0.3s; 
+}
+
+.profil ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    font-size: 18px; 
+}
+
+.profil ul li a:hover {
+    background-color: #f0f0f0; /* Couleur de fond au survol */
+}
+
+.profil .extra-content {
+    display: none;
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 200px; 
+    border-left: 2px solid #007bff; 
+    padding-left: 20px;
+}
+
+.profil .edit-profil:hover .extra-content {
+    display: block;
+}

@@ -3,6 +3,8 @@ import { DateAdapter } from '@angular/material/core';
 import { MatCalendarCellCssClasses } from '@angular/material/datepicker';
 import { Activite } from 'src/app/classes/activite';
 import { User } from 'src/app/classes/user';
+import { ActivitiesService } from 'src/app/services/activities.service';
+import { AdminService } from 'src/app/services/admin.service';
 
 
 @Component({
@@ -17,7 +19,9 @@ export class CalenderComponent implements OnInit {
   user!: User;
 
 
-  constructor(private dateAdapter: DateAdapter<Date>) { }
+  constructor(private dateAdapter: DateAdapter<Date>,
+    private activitiesService:ActivitiesService,
+    private adminSrvice :AdminService) { }
   ngOnInit(): void {
     const userData = localStorage.getItem('session');
     if (userData) {
@@ -32,7 +36,18 @@ export class CalenderComponent implements OnInit {
     }
   }
 
-
+  unsubscribe(id: number): void {
+    this.listOfActivities = this.listOfActivities.filter(act => act.id !== id);
+    this.activitiesService.getActivitieById(id).subscribe(activitie => {
+      const nbplaceAct = activitie.nbplace;
+      this.activitiesService.updateNbplace(id, nbplaceAct + 1).subscribe(() => {
+        this.adminSrvice.removeActivityFromUser(this.user.id, activitie.id).subscribe(data => {
+          localStorage.setItem("session", JSON.stringify(data));
+        });
+      });
+    });
+  }
+  
 
   dateClass(): (date: Date) => MatCalendarCellCssClasses {
     return (date: Date): MatCalendarCellCssClasses => {

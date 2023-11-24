@@ -1,7 +1,7 @@
 // admin.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Subject, Observable, BehaviorSubject, mergeMap } from 'rxjs';
+import {Subject, Observable, BehaviorSubject, mergeMap, throwError } from 'rxjs';
 import { Admin } from '../classes/admin';
 import { Activite } from '../classes/activite';
 import { User } from '../classes/user';
@@ -38,20 +38,35 @@ return this.http.put<Admin[]>(URL+"/"+id,admin);
   deleteAdmin(id:number):Observable<Admin>{
     return this.http.delete<Admin>(URL+"/"+id);
   }
+  upadtepassword(id:number,password:string):Observable<Admin>{
+   return this.http.patch<Admin>(`${URL}/${id}`,{password});
+  }
   logout(){
    
-    localStorage.removeItem("etat");
-    localStorage.removeItem("session");
-    localStorage.removeItem("subscribedActivities");
+   localStorage.clear();
   }
 
 
   addActivityToUser(userId: number, activity: Activite): Observable<User> {
     return this.http.get<User>(`${URL}/${userId}`).pipe(
       mergeMap((user: User) => {
-        user.listOfActivities.push(activity); // Ajouter l'activité à la liste de l'utilisateur
-        return this.http.put<User>(`${URL}/${userId}`, user); // Mettre à jour l'utilisateur avec la liste d'activités modifiée
+        user.listOfActivities.push(activity); 
+        return this.http.put<User>(`${URL}/${userId}`, user); 
       })
     );
   }
+  removeActivityFromUser(userId: number, activityId: number): Observable<User> {
+    return this.http.get<User>(`${URL}/${userId}`).pipe(
+      mergeMap((user: User) => {
+        const index = user.listOfActivities.findIndex(activity => activity.id === activityId);
+        if (index !== -1) {
+          user.listOfActivities.splice(index, 1); // Retire l'activité de la liste
+          return this.http.put<User>(`${URL}/${userId}`, user); // Met à jour l'utilisateur
+        } else {
+          return throwError('Activity not found'); // Retourne une erreur si l'activité n'est pas trouvée dans la liste
+        }
+      })
+    );
+  }
+  
 }

@@ -17,8 +17,10 @@ import { SettingsComponent } from './BackOffice/Component/settings/settings.comp
 import { AddFormComponent } from './FrontOffice/Component/blogs/add-form/add-form.component';
 import { UserProfilComponent } from './FrontOffice/Component/User/user-profil/user-profil.component';
 import { authGuard } from './guard/auth.guard';
-import { EditComponent } from './FrontOffice/Component/User/edit/edit.component';
 import { CalenderComponent } from './FrontOffice/Component/User/calender/calender.component';
+import { UserInformationsComponent } from './FrontOffice/Component/User/user-informations/user-informations.component';
+import { UserupdateInformationsComponent } from './FrontOffice/Component/User/edit/userupdate-informations/userupdate-informations.component';
+import { UserupdatePasswordComponent } from './FrontOffice/Component/User/edit/userupdate-password/userupdate-password.component';
 
 const routes: Routes = [
   {path:'',component:PageAcceuilComponent,
@@ -30,7 +32,13 @@ const routes: Routes = [
   {path:'blogs',title:'Blog',component:BlogsComponent},
   {path:'profil',title:'profil',component:UserProfilComponent,canActivate:[authGuard],
 children:[
-  {path:"edit",title:"edit profil",component:EditComponent},
+  {path:"",title:"Infos",component:UserInformationsComponent},
+      {path:"editpassword",title:"edit passowrd",component:UserupdatePasswordComponent},
+    {path:"editinfos",title:"edit informations",component:UserupdateInformationsComponent},
+
+ 
+
+
   {path:"calendar",title:"calendar",component:CalenderComponent}
 
 ]
