@@ -7,7 +7,7 @@
         <p>{{ activitie.description }}</p>
         <div style="margin-left: 25%;margin-top: 10%; display: flex;justify-content: space-around;">
         <a class="cta-button" (click)="openAct()">See More</a>
-        <input type="button" class="cta-button" (click)="Subscribe()"  value="Subscribe">
+        <input type="button" class="cta-button" (click)="Subscribe()" [disabled]="Subscribed"  value="Subscribe">
       </div>
       </div>
     </div>

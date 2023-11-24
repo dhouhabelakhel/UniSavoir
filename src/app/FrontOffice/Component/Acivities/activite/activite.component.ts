@@ -17,7 +17,7 @@ export class ActiviteComponent implements OnInit {
 @Input() activitie!:Activite;
 currentdate!: Date;
 role!:string;
-
+Subscribed=false;
  act!:Activite[];
  constructor(private datePipe: DatePipe, public dialog: MatDialog, 
   private route :ActivatedRoute,private router: Router,
@@ -55,7 +55,7 @@ else{
   const updatedNbPlace = this.activitie.nbplace - 1;
   this.activitiesService.updateNbplace(this.activitie.id,updatedNbPlace).subscribe(data=>{
     alert("succes");
-    
+    this.Subscribed=true;
     const storedSession = localStorage.getItem('session');
     if (storedSession) {
       const user = JSON.parse(storedSession);

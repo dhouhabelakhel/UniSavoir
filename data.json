@@ -141,6 +141,51 @@
       "phoneNumber": null,
       "Role": "admin",
       "id": 7
+    },
+    {
+      "userName": "sissi",
+      "password": "sissi",
+      "email": "",
+      "fullName": "",
+      "adresse": "",
+      "phoneNumber": null,
+      "Role": "user",
+      "listOfActivities": [
+        {
+          "id": 1,
+          "intitule": "intiation web",
+          "photo": "assets/v.jpg",
+          "description": "",
+          "prix": 500,
+          "nbplace": 82,
+          "disponible": true,
+          "date_debut": "2023-12-13",
+          "duree": "2 semaines",
+          "skills": [
+            {
+              "nomskill": "angular",
+              "description": "",
+              "niveau": "avancee"
+            },
+            {
+              "nomskill": "spingboot",
+              "description": "",
+              "niveau": "intiation"
+            }
+          ],
+          "formateur": [
+            {
+              "nomComplet": "dhouha"
+            },
+            {
+              "nomComplet": "aziz"
+            }
+          ],
+          "categorie": "devloppement web",
+          "lieu": "tunis"
+        }
+      ],
+      "id": 8
     }
   ],
   "activities": [
@@ -150,7 +195,7 @@
       "photo": "assets/v.jpg",
       "description": "",
       "prix": 500,
-      "nbplace": 85,
+      "nbplace": 81,
       "disponible": true,
       "date_debut": "2023-12-13",
       "duree": "2 semaines",
@@ -182,7 +227,7 @@
       "photo": "b",
       "description": "",
       "prix": "b",
-      "nbplace": 9,
+      "nbplace": 8,
       "certification": "",
       "date_debut": "",
       "duree": "1months",
