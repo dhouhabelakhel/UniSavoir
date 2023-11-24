@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Admin } from 'src/app/classes/admin';
 import { AdminService } from 'src/app/services/admin.service';
@@ -9,19 +10,46 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class LoginComponent implements OnInit {
   isSignupMode = false;
-
-  constructor(private router: Router, private adminService: AdminService) { }
+singIn!:FormGroup;
+singUp!:FormGroup;
+  constructor(private router: Router, private adminService: AdminService ,private formBuilder:FormBuilder) { }
   ngOnInit(): void {
+this.singIn=this.formBuilder.nonNullable.group({
+  username:[''],
+  password:['']
+})
+this.singUp=this.formBuilder.nonNullable.group({
+  userName:[''],
+  password:[''],
+  email:[''],
+  fullName:[''],
+  adresse:[''],
+  phoneNumber:[],
+  Role:['user'],
+  listOfActivities:[[]],
+})
+  }
+  SingUp(){
+this.adminService.getAdminByUserName(this.singUp.get('userName')?.value).subscribe(
+(users)=>{
+  if(users && users.length>0)
+  alert("existe deja!!")
+
+else {
+  this.adminService.addAdmin(this.singUp.value).subscribe(data=>{console.log(data);
+    localStorage.setItem("session",JSON.stringify(data));
+    localStorage.setItem("etat","conected");
+    this.router.navigate(['home']);
+  });
+}
+
 
   }
-  returnHomePage() {
-    this.router.navigate(['/home']);
+)
   }
 
-  LogIn(user: string, pass: string) {
-
-
-    this.adminService.verifAuth(user,pass).subscribe(
+  LogIn() {
+    this.adminService.verifAuth(this.singIn.get('username')?.value,this.singIn.get('password')?.value).subscribe(
       (admins) => {
         if (admins && admins.length > 0) {
           localStorage.setItem("session", JSON.stringify(admins[0]));
@@ -32,7 +60,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['home']);
         } else {
           console.log("No user found .");
-          localStorage.setItem("etat","disconected");
+          
         }
       },
       (error) => {

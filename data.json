@@ -41,11 +41,17 @@
       "author": "zina",
       "content": "zina",
       "id": 7
+    },
+    {
+      "title": "tester zina",
+      "author": "zina",
+      "content": "zina chatte",
+      "id": 8
     }
   ],
   "Users": [
     {
-      "userName": "dhouha ",
+      "userName": "dhouha",
       "password": "dhouha1307",
       "email": "dhouhabelakhel2001@gmail.com",
       "fullName": "noura belakhel",
@@ -53,26 +59,6 @@
       "phoneNumber": "25079968",
       "Role": "admin",
       "id": 1
-    },
-    {
-      "userName": "admin",
-      "password": "pwd",
-      "email": "",
-      "fullName": "",
-      "adresse": "",
-      "phoneNumber": null,
-      "Role": "Admin",
-      "id": 4
-    },
-    {
-      "userName": "adminn",
-      "password": "pwd",
-      "email": "bb",
-      "fullName": "bb",
-      "adresse": "",
-      "phoneNumber": null,
-      "Role": "Admin",
-      "id": 5
     },
     {
       "userName": "zina",
@@ -186,6 +172,27 @@
         }
       ],
       "id": 8
+    },
+    {
+      "userName": "angular",
+      "password": "angular",
+      "email": "",
+      "fullName": "",
+      "adresse": "",
+      "phoneNumber": null,
+      "Role": "admin",
+      "id": 9
+    },
+    {
+      "userName": "mitem",
+      "password": "mitem",
+      "email": "mitem@email.com",
+      "fullName": "",
+      "adresse": "",
+      "phoneNumber": null,
+      "Role": "user",
+      "listOfActivities": [],
+      "id": 10
     }
   ],
   "activities": [

@@ -42,7 +42,6 @@ return this.http.put<Admin[]>(URL+"/"+id,admin);
    return this.http.patch<Admin>(`${URL}/${id}`,{password});
   }
   logout(){
-   
    localStorage.clear();
   }
 
