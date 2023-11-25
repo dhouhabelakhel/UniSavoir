@@ -41,6 +41,9 @@ return this.http.put<Admin[]>(URL+"/"+id,admin);
   upadtepassword(id:number,password:string):Observable<Admin>{
    return this.http.patch<Admin>(`${URL}/${id}`,{password});
   }
+  updateUserInfos(id:number,email:string,fullName:string,adresse:string,phoneNumber:number):Observable<User>{
+    return this.http.patch<User>(`${URL}/${id}`,{email,fullName,adresse,phoneNumber});
+  }
   logout(){
    localStorage.clear();
   }

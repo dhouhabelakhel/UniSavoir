@@ -20,14 +20,17 @@ export class UserupdateInformationsComponent implements OnInit {
     this.user = JSON.parse(userdata);
     this.profileForm = this.formBuilder.group({
       userName: [this.user?.userName],
-      password: [this.user?.password],
       email: [this.user?.email],
       fullName: [this.user?.fullName],
       adresse: [this.user?.adresse],
       phoneNumber: [this.user?.phoneNumber],
-      Role:[this.user?.Role],
-      listOfActivities:[this.user.listOfActivities]
+    
     });
    }
   }
+  updateUserInfos(){
+  this.adminService.updateUserInfos(this.user.id,this.profileForm.get('email')?.value,this.profileForm.get('fullName')?.value,this.profileForm.get('adresse')?.value,this.profileForm.get('phoneNumber')?.value).subscribe(
+    User=>localStorage.setItem("session",JSON.stringify(User))
+  )
+}
 }

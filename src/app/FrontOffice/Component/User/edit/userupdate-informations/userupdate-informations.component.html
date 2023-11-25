@@ -1,16 +1,12 @@
 <div class="container mt-5" style="margin-left: 20%;">
-    <form [formGroup]="profileForm">
+    <form [formGroup]="profileForm" (ngSubmit)="updateUserInfos()">
         <input type="text" formControlName="" hidden>
 
       <div class="mb-3">
         <label for="user" class="form-label">User</label>
-        <input type="text" class="form-control" id="user" formControlName="userName">
+        <input type="text" class="form-control" id="user" formControlName="userName" readonly>
       </div>
   
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" formControlName="password" readonly>
-      </div>
   
       <div class="mb-3">
         <label for="user" class="form-label">FullName</label>
