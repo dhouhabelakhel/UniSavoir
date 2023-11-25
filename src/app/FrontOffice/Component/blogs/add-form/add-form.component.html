@@ -1,16 +1,36 @@
 <main>
-    <div class="blog-container">
+
+    
+    <div class="blog-container" *ngIf="userData">
         <h1>Create a New Blog</h1>
-        <form [formGroup]="addblog" (ngSubmit)="saveblog()">
+        <form [formGroup]="addblog" (ngSubmit)="saveblog()" novalidate>
             <div class="form-group">
                 <label for="title">Blog Title</label>
                 <input type="text" class="form-control" id="title" placeholder="Enter the blog title" formControlName="title">
+             
             </div>
-           
+            <div>
+            <div *ngIf="isValidTitle()" class="alert alert-danger">
+                Le titre doit avoir au moins 6 caractères et commencer par une majuscule.
+              </div>
+              <div *ngIf="isValidTitleLength()" class="alert alert-danger">
+                Le titre doit avoir au moins 6 caractères 
+              </div>
+              <div *ngIf=" isValidTitlePattren()" class="alert alert-danger">
+                Le titre doit  commencer par une majuscule.
+              </div>
+            </div>
             <div class="form-group">
                 <label for="content">Blog Content</label>
                 <textarea class="form-control" id="content" rows="6" placeholder="Enter the blog content"
                      formControlName="content"></textarea>
+                     <div *ngIf=" isValidContent() " class="alert alert-danger">
+                        required
+                     </div>
+                     <div *ngIf="  isValidContentLength() " class="alert alert-danger">
+                       maxlength
+                     </div>
+                     
             </div>
             <div class="btn-container">
                 <button type="submit" class="submit-btn">Submit
@@ -26,3 +46,4 @@
     </div>
     
 </main>
+
