@@ -54,6 +54,13 @@
       "content": "blog from ",
       "dateBlog": "2023-11-25T20:04:34.810Z",
       "id": 9
+    },
+    {
+      "title": "Testttt",
+      "author": "zina",
+      "content": "TEstt",
+      "dateBlog": "2023-11-25T21:04:44.770Z",
+      "id": 10
     }
   ],
   "Users": [
@@ -71,7 +78,7 @@
       "userName": "zina",
       "password": "Zinachatte1@",
       "email": "zina@email.com",
-      "fullName": "",
+      "fullName": "zina chatte",
       "adresse": "soukraa",
       "phoneNumber": "23060847",
       "Role": "user",

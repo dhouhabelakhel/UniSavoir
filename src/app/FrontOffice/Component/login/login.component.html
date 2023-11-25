@@ -2,7 +2,7 @@
     <div class="container" [ngClass]="{ 'sign-up-mode': isSignupMode }"  >
         <div class="signin-signup">
             <form  class="sign-in-form" [formGroup]="singIn" (ngSubmit)="LogIn()" novalidate> 
-                <h2 class="title">Sign in</h2>
+                <h2 class="title" style="margin-top: -20%;">Sign in</h2>
 
                 <div class="input-field"  >
 
@@ -19,22 +19,22 @@
                 <input type="submit" value="Login" class="btn" [disabled]="singIn.invalid" >
                 <p class="social-text">Or Sign in with social platform</p>
                 <div class="social-media">
-                    <a href="#" class="social-icon">
+                    <a  class="social-icon">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="" class="social-icon">
+                    <a  class="social-icon">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="" class="social-icon">
+                    <a  class="social-icon">
                         <i class="fab fa-google"></i>
                     </a>
-                    <a href="" class="social-icon">
+                    <a  class="social-icon">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
             </form>
             <form  class="sign-up-form" [formGroup]="singUp" (ngSubmit)=" SingUp()" novalidate>
-                <h2 class="title">Sign up</h2>
+                <h2 class="title" style="margin-top: 5%;">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="Username" formControlName="userName">
@@ -59,16 +59,16 @@
                 <input type="submit" value="Sign up" class="btn" [disabled]="singUp.invalid">
                 <p class="social-text">Or Sign in with social platform</p>
                 <div class="social-media">
-                    <a href="#" class="social-icon">
+                    <a  class="social-icon">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="" class="social-icon">
+                    <a  class="social-icon">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="" class="social-icon">
+                    <a  class="social-icon">
                         <i class="fab fa-google"></i>
                     </a>
-                    <a href="" class="social-icon">
+                    <a  class="social-icon">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
@@ -111,7 +111,7 @@
                         </div>
                       </div>
                       
-                    <h3>Member of Brand?</h3>
+                    <h3>Member of UniSavoir?</h3>
                   
                     <button class="btn " id="sign-in-btn" (click)="onSignupClick()">Sign in</button>
                
@@ -121,11 +121,10 @@
             <div class="panel right-panel">
                 <div class="content" style="margin-top:-20%">
 
-                    <h3>New to Brand?</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt
-                        minima iure?</p>
+                    <h3>New to UniSavoir?</h3>
+                   
                     <button class="btn" id="sign-up-btn" (click)="onSignupClick()">Sign up</button>
-                        <div class="cube">
+                        <div class="cube" style="margin-top: 2%;">
             <div class="topD"></div>
             <div>
               <span style="--i:0"></span>
