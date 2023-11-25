@@ -26,15 +26,14 @@ lieu:[''],
   }
   
   onFileSelected(event: any) {
-    const file = event.target.files[0]; // Récupérez le fichier sélectionné
+    const file = event.target.files[0]; 
     if (file) {
       const reader = new FileReader();
-      reader.readAsDataURL(file); // Convertissez le fichier en URL base64
+      reader.readAsDataURL(file); 
 
       reader.onload = () => {
-        // Obtenez l'URL de l'image et mettez à jour le formulaire
         this.addAct.patchValue({
-          photo: reader.result as string // Mettez l'URL de l'image dans le champ 'photo'
+          photo: reader.result as string 
         });
       };
     }

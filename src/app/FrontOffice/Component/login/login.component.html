@@ -1,7 +1,7 @@
 <div class="big-container">
     <div class="container" [ngClass]="{ 'sign-up-mode': isSignupMode }"  >
         <div class="signin-signup">
-            <form  class="sign-in-form" [formGroup]="singIn" (ngSubmit)="LogIn()"> 
+            <form  class="sign-in-form" [formGroup]="singIn" (ngSubmit)="LogIn()" novalidate> 
                 <h2 class="title">Sign in</h2>
 
                 <div class="input-field"  >
@@ -9,11 +9,14 @@
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="Username" name="username" pInputText title="Enter your username" formControlName="username">
                 </div>
+                <div *ngIf="isValidLogInUsername()" style="color: red;">invalid username</div>
+
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" placeholder="Password" pInputText title="Enter your password" formControlName="password" >
                 </div>
-                <input type="submit" value="Login" class="btn"  >
+                <div *ngIf="isValidLogInPassword()" style="color: red;">invalid password</div>
+                <input type="submit" value="Login" class="btn" [disabled]="singIn.invalid" >
                 <p class="social-text">Or Sign in with social platform</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
@@ -30,21 +33,30 @@
                     </a>
                 </div>
             </form>
-            <form  class="sign-up-form" [formGroup]="singUp" (ngSubmit)=" SingUp()">
+            <form  class="sign-up-form" [formGroup]="singUp" (ngSubmit)=" SingUp()" novalidate>
                 <h2 class="title">Sign up</h2>
                 <div class="input-field">
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="Username" formControlName="userName">
+                    <div *ngIf="isValidName()">
+                        invalid name
+                    </div>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
                     <input type="text" placeholder="Email" formControlName="email">
+                    <div *ngIf="isValidEmail()">
+                        invalid email
+                    </div>
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder="Password" formControlName="password">
+                    <div *ngIf="isValidPass()">
+                        invalid password
+                    </div>
                 </div>
-                <input type="submit" value="Sign up" class="btn" >
+                <input type="submit" value="Sign up" class="btn" [disabled]="singUp.invalid">
                 <p class="social-text">Or Sign in with social platform</p>
                 <div class="social-media">
                     <a href="#" class="social-icon">
