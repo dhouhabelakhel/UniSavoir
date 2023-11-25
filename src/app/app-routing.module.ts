@@ -21,6 +21,8 @@ import { CalenderComponent } from './FrontOffice/Component/User/calender/calende
 import { UserInformationsComponent } from './FrontOffice/Component/User/user-informations/user-informations.component';
 import { UserupdateInformationsComponent } from './FrontOffice/Component/User/edit/userupdate-informations/userupdate-informations.component';
 import { UserupdatePasswordComponent } from './FrontOffice/Component/User/edit/userupdate-password/userupdate-password.component';
+import { UpdateAdminProfilComponent } from './BackOffice/Component/profile/update-admin-profil/update-admin-profil.component';
+import { UpdateAdminPasswordComponent } from './BackOffice/Component/profile/update-admin-password/update-admin-password.component';
 
 const routes: Routes = [
   {path:'',component:PageAcceuilComponent,
@@ -57,6 +59,8 @@ children:[
 
  {path:'activities',title:'Activities',component:ActivitiesListComponent},
   {path:'profile',title:'Profile',component:ProfileComponent},
+  {path:'infos',title:'update infos',component:UpdateAdminProfilComponent},
+  {path:'editpassword',title:'edit password',component:UpdateAdminPasswordComponent}
 
 
 ]},

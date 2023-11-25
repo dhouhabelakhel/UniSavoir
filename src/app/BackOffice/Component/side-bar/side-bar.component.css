@@ -1,7 +1,4 @@
 
-body {
-  font-family: 'Arial', sans-serif; 
-}
 
 .sidebar {
   height: 100vh; 
@@ -30,4 +27,18 @@ hr {
 }
 ul li{
   padding: 10%;
+}
+.extra-content {
+  display: none;
+  position: absolute;
+  background-color: #333; 
+  border-radius: 2%;
+  padding: 10px;
+  margin-left: 10vw;
+  width: 20vw;
+ 
+}
+
+.nav-item:hover .extra-content {
+  display: block;
 }

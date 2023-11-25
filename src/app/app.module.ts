@@ -42,6 +42,8 @@ import { UserInformationsComponent } from './FrontOffice/Component/User/user-inf
 import { UserupdatePasswordComponent } from './FrontOffice/Component/User/edit/userupdate-password/userupdate-password.component';
 import { UserupdateInformationsComponent } from './FrontOffice/Component/User/edit/userupdate-informations/userupdate-informations.component';
 import { ScrollStrategyOptions } from '@angular/cdk/overlay';
+import { UpdateAdminProfilComponent } from './BackOffice/Component/profile/update-admin-profil/update-admin-profil.component';
+import { UpdateAdminPasswordComponent } from './BackOffice/Component/profile/update-admin-password/update-admin-password.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +80,8 @@ import { ScrollStrategyOptions } from '@angular/cdk/overlay';
     UserInformationsComponent,
     UserupdatePasswordComponent,
     UserupdateInformationsComponent,
+    UpdateAdminProfilComponent,
+    UpdateAdminPasswordComponent,
   ],
   imports: [
     FormsModule, 

@@ -1,7 +1,7 @@
 // admin.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Subject, Observable, BehaviorSubject, mergeMap, throwError } from 'rxjs';
+import { Observable,  mergeMap, throwError } from 'rxjs';
 import { Admin } from '../classes/admin';
 import { Activite } from '../classes/activite';
 import { User } from '../classes/user';
@@ -40,6 +40,9 @@ return this.http.put<Admin[]>(URL+"/"+id,admin);
   }
   upadtepassword(id:number,password:string):Observable<Admin>{
    return this.http.patch<Admin>(`${URL}/${id}`,{password});
+  }
+  updateAdminInfos(id:number,email:string,fullName:string,adresse:string,phoneNumber:number):Observable<Admin>{
+    return this.http.patch<Admin>(`${URL}/${id}`,{email,fullName,adresse,phoneNumber});
   }
   updateUserInfos(id:number,email:string,fullName:string,adresse:string,phoneNumber:number):Observable<User>{
     return this.http.patch<User>(`${URL}/${id}`,{email,fullName,adresse,phoneNumber});
