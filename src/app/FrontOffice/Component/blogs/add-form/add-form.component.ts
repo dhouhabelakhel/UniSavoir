@@ -23,6 +23,7 @@ export class AddFormComponent implements OnInit{
       title:['',[Validators.minLength(6),Validators.required,Validators.pattern('^[A-Z].*')]],
       author:[this.user.userName],
       content:['',[Validators.required,Validators.maxLength(10)]],
+      dateBlog:[new Date()]
    })
   }}
   public get title() {

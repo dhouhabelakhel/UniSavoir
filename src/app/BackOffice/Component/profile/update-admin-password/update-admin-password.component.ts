@@ -44,7 +44,6 @@ return this.confpass?.errors?.['passwordMismatch'] && this.confpass?.dirty;
       });}
       else alert("invalid password")
       this.updatepassword.reset();
-
     }
   }
 }

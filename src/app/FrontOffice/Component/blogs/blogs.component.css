@@ -1,0 +1,23 @@
+.container.spacer {
+    padding: 5vw;
+}
+
+.title {
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+    font-weight: bold; 
+}
+
+.subtitle {
+    font-size: 0.8rem; 
+    
+    font-style: italic;
+    color: #555; 
+    margin-bottom: 2rem;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 1rem; 
+    margin-bottom: 2rem; 
+}

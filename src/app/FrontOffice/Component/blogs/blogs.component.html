@@ -1,4 +1,20 @@
-<div *ngFor="let blogitem of blogs">
-    <app-blog [blog]="blogitem"></app-blog>
+<div class="container spacer" style="padding: 5vw;">
+    <div class="row justify-content-center">
+
+        <div class="col-md-8 no-trans text-center">
+            <h2 class="title" style="font-size: xx-large;">Recent Blogs</h2>
+            <h6 class="subtitle" style="font-size: 1vw;color: grey;">
+             
+"Education is not preparation for life; education is life itself." - John Dewey
+            </h6>
+        </div>
+
+    </div>
+    <div  style="margin-left: 10vw;">
+
+        <div class="border-bottom mb-4" *ngFor="let blogitem of blogs" style="padding: 5vw;margin-left: 10vw;height: 15vw;">
+            <app-blog [blog]="blogitem"></app-blog>
+        </div>
+    </div>
 </div>
 <app-add-form (newBlog)="associer($event)"></app-add-form>
