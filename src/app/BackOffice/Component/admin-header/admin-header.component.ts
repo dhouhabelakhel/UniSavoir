@@ -8,11 +8,12 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
   styleUrls: ['./admin-header.component.css']
 })
 export class AdminHeaderComponent {
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog ) {}
 
   openAddForm() {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '60%'; 
-    this.dialog.open(AddActivitiesComponent);
+    const dialogRef = this.dialog.open(AddActivitiesComponent, {
+      height: '90%',
+      width:'60%'
+    });
   }
 }

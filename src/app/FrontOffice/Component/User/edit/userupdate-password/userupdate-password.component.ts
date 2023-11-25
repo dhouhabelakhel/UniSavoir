@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/services/admin.service';
-import { matchingPasswordsValidator } from 'src/app/validatePass/validatePass';
+import { matchingPasswordsValidator } from 'src/app/validators/validatePass';
 @Component({
   selector: 'app-userupdate-password',
   templateUrl: './userupdate-password.component.html',

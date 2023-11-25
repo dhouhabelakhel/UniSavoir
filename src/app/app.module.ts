@@ -41,6 +41,7 @@ import { AddUserComponent } from './BackOffice/Component/add-user/add-user.compo
 import { UserInformationsComponent } from './FrontOffice/Component/User/user-informations/user-informations.component';
 import { UserupdatePasswordComponent } from './FrontOffice/Component/User/edit/userupdate-password/userupdate-password.component';
 import { UserupdateInformationsComponent } from './FrontOffice/Component/User/edit/userupdate-informations/userupdate-informations.component';
+import { ScrollStrategyOptions } from '@angular/cdk/overlay';
 
 @NgModule({
   declarations: [

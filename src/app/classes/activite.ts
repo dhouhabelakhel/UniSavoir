@@ -7,7 +7,7 @@ export class Activite {
                public intitule: string,
                public  photo: string,
                public  description:string,
-               public   prix: String,
+               public   prix: number,
                public  nbplace:number,
                public  Certification: boolean,
                public   date_debut: Date,

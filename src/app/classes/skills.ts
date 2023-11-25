@@ -1,7 +1,6 @@
 export class Skills {
     constructor(
-        public nomskill:string,
-        public description: string,
+        public skillName:string,
         public niveau: string,
     ){ }
 }

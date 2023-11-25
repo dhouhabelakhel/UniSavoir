@@ -40,8 +40,6 @@ editActivitie(id:number,act:Activite):Observable<Activite>{
   return this.http.put<Activite>(`${URL}/${id}`,act);
 }
 updateNbplace(id:number,nbplace:number):Observable<Activite>{
-
-  return this.http.patch<Activite>(`${URL}/${id}`,{nbplace});
-
+return this.http.patch<Activite>(`${URL}/${id}`,{nbplace});
 }
 }

@@ -42,9 +42,9 @@ export class ActivitiesListComponent implements OnInit {
     });
   }
 editAct(act:Activite){
-  const ActUpdate = new MatDialogConfig();
-  ActUpdate.width = '60%'; 
-  this.dialog.open(UpdateActivitieComponent, {data:{activitie:act}});
+  const dialogRef = this.dialog.open(UpdateActivitieComponent, {
+    height: '90%',width:'60%',data:{activitie:act}});
 
 }
+
 }
