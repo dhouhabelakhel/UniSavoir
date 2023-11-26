@@ -31,16 +31,13 @@ const routes: Routes = [
 
   {path:'home',title:'Home',component:CorpHomePageComponent},
   {path:'activities',title:'Activities',component:ListOfActivitiesComponent },
+
   {path:'blogs',title:'Blog',component:BlogsComponent},
   {path:'profil',title:'profil',component:UserProfilComponent,canActivate:[authGuard],
 children:[
   {path:"",title:"Infos",component:UserInformationsComponent},
       {path:"editpassword",title:"edit passowrd",component:UserupdatePasswordComponent},
     {path:"editinfos",title:"edit informations",component:UserupdateInformationsComponent},
-
- 
-
-
   {path:"calendar",title:"calendar",component:CalenderComponent}
 
 ]
@@ -50,14 +47,14 @@ children:[
   
  ]
 },
+{ path: 'selectedact/:id', title: 'details', component: SlectedactComponent },
 {path:'login',title:'LOGIN',component:LoginComponent},
 {path:'adminhome',title:'AdminHome',component:AdminHomepageComponent,
 children:[
   {path:'',title:'dashboard',component:DashboardComponent},
   {path:'dashboard',title:'dashboard',component:DashboardComponent},
   {path:'settings',title:'dashboard',component:SettingsComponent},
-
- {path:'activities',title:'Activities',component:ActivitiesListComponent},
+  {path:'activities',title:'Activities',component:ActivitiesListComponent},
   {path:'profile',title:'Profile',component:ProfileComponent},
   {path:'infos',title:'update infos',component:UpdateAdminProfilComponent},
   {path:'editpassword',title:'edit password',component:UpdateAdminPasswordComponent}

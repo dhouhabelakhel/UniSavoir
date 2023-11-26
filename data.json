@@ -61,6 +61,13 @@
       "content": "TEstt",
       "dateBlog": "2023-11-25T21:04:44.770Z",
       "id": 10
+    },
+    {
+      "title": "",
+      "author": "zina",
+      "content": "",
+      "dateBlog": "2023-11-26T07:40:42.327Z",
+      "id": 11
     }
   ],
   "Users": [
@@ -194,7 +201,7 @@
       "fullName": "",
       "adresse": "",
       "phoneNumber": null,
-      "Role": "admin",
+      "Role": "user",
       "id": 9
     },
     {
@@ -214,7 +221,7 @@
       "intitule": "intiation web",
       "photo": "assets/v.jpg",
       "description": "",
-      "prix": 500,
+      "prix": "0",
       "nbplace": 81,
       "certification": null,
       "date_debut": "2023-12-13",

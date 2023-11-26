@@ -43,6 +43,8 @@ import { UserupdatePasswordComponent } from './FrontOffice/Component/User/edit/u
 import { UserupdateInformationsComponent } from './FrontOffice/Component/User/edit/userupdate-informations/userupdate-informations.component';
 import { UpdateAdminProfilComponent } from './BackOffice/Component/profile/update-admin-profil/update-admin-profil.component';
 import { UpdateAdminPasswordComponent } from './BackOffice/Component/profile/update-admin-password/update-admin-password.component';
+import { PipePersoPipe } from './pipe-perso.pipe';
+import { HelloPipe } from './hello.pipe';
 
 @NgModule({
   declarations: [
@@ -81,6 +83,8 @@ import { UpdateAdminPasswordComponent } from './BackOffice/Component/profile/upd
     UserupdateInformationsComponent,
     UpdateAdminProfilComponent,
     UpdateAdminPasswordComponent,
+    PipePersoPipe,
+    HelloPipe,
   ],
   imports: [
     FormsModule, 

@@ -42,8 +42,7 @@ Subscribed=false;
  
  }
  openAct() {
-  const dialogRef = this.dialog.open(SlectedactComponent,{data:{activitie:this.activitie}});
- 
+   this.router.navigate(['/selectedact', this.activitie.id]);
 }
 Subscribe(){
 if(this.role=="public")

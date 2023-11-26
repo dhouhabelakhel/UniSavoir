@@ -1,33 +1,30 @@
-<h2 mat-dialog-title>{{data.activitie.intitule}}</h2>
 
-<mat-dialog-content class="mat-typography">
-  <img [src]="data.activitie.photo">
+<div class="card">
+  <h1 style="text-align: center;font-size: x-large;">{{activitie.intitule|pipePerso}}</h1>
+  <img [src]="activitie.photo" >
 
-  <h3>{{data.activitie.description}}</h3>
-  <p>{{data.activitie.prix}}DT | {{data.activitie.nbplace}} places</p>
-  <p *ngIf="data.activitie.nbplace>0" class="text-success" style="font-weight: bold;">Available</p>
-  <p *ngIf="data.activitie.nbplace==0" class="text-danger" style="font-weight: bold;">Not available</p>
-   Certification : <input type="checkbox" [checked]="data.activitie.certification" disabled>
-  <p><span style="font-weight: bold;">Start Date :</span> {{data.activitie.date_debut | date}}</p>
-  <p><span style="font-weight: bold;">Duration :</span> {{data.activitie.duree}}</p>
- <div *ngIf="data.activitie.skills">
+  <h3>{{activitie.description}}</h3>
+  <p><span *ngIf="activitie.prix==0" class="text-success" style="font-weight: bold;">FREE</span><span *ngIf="activitie.prix>0">{{activitie.prix}}DT</span>
+     | {{activitie.nbplace}} places</p>
+  <p *ngIf="activitie.nbplace>0" class="text-success" style="font-weight: bold;">Available</p>
+  <p *ngIf="activitie.nbplace==0" class="text-danger" style="font-weight: bold;">Not available</p>
+   Certification : <input type="checkbox" [checked]="activitie.Certification" disabled>
+  <p><span style="font-weight: bold;">Start Date :</span> {{activitie.date_debut | date}}</p>
+  <p><span style="font-weight: bold;">Duration :</span> {{activitie.duree}}</p>
+ <div *ngIf="activitie.skills">
   <h3>Skills :</h3>
   <ul class="list-group" >
-    <li *ngFor="let skill of data.activitie.skills" class="list-group-item">
+    <li *ngFor="let skill of activitie.skills" class="list-group-item">
       {{skill.skillName}} - {{skill.niveau}}
     </li>
   </ul>
 </div>
-<div *ngIf="data.activitie.formateur">
+<div *ngIf="activitie.formateur">
   <h3>Formateur :</h3>
   <ul class="list-group mt-2">
-    <li *ngFor="let formateur of data.activitie.formateur" class="list-group-item">
+    <li *ngFor="let formateur of activitie.formateur" class="list-group-item">
       {{formateur.nomComplet}}--{{formateur.intitule}}
     </li>
   </ul>
 </div>
-
-</mat-dialog-content>
-<mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
-</mat-dialog-actions>
+</div>

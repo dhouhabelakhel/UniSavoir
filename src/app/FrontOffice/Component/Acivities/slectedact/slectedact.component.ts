@@ -14,9 +14,7 @@ export class SlectedactComponent implements OnInit{
 activitie!:Activite;
 id!:number;
 constructor(private activitiesService:ActivitiesService,
-  private router:Router,private route: ActivatedRoute,
-  public dialogRef: MatDialogRef<SlectedactComponent>,
-  @Inject(MAT_DIALOG_DATA) public data: any){}
+  private router:Router,private route: ActivatedRoute){}
 ngOnInit(): void {
   this.route.params.subscribe(
       params=>{this.id=params['id']}

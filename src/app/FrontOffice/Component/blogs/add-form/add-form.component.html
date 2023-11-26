@@ -6,7 +6,7 @@
         <form [formGroup]="addblog" (ngSubmit)="saveblog()" novalidate>
             <div class="form-group">
                 <label for="title" style="font-style: italic;">Blog Title</label>
-                <input type="text" class="form-control" id="title" placeholder="Enter the blog title" formControlName="title">
+                <input type="text" class="form-control" id="title" pInputText title="Enter the blog title" formControlName="title">
              
             </div>
             <div>
@@ -22,7 +22,7 @@
             </div>
             <div class="form-group">
                 <label for="content"  style="font-style: italic;">Blog Content</label>
-                <textarea class="form-control" id="content" rows="6" placeholder="Enter the blog content"
+                <textarea class="form-control" id="content" rows="6" pInputText title="Enter the blog content"
                      formControlName="content"></textarea>
                      <div *ngIf=" isValidContent() " class="alert alert-danger">
                         required
@@ -33,7 +33,7 @@
                      
             </div>
             <div class="btn-container">
-                <button type="submit" class="submit-btn"  style="font-style: italic;">Add
+                <button type="submit" class="submit-btn"  style="font-style: italic;" [disabled]="addblog.invalid">Add
     
                 </button>
             </div>
