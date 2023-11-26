@@ -39,8 +39,8 @@ return this.confpass?.errors?.['passwordMismatch'] && this.confpass?.dirty;
     if (userData) {
       const user=JSON.parse(userData);
       if(this.updatepassword.get('oldpassword')?.value===user.password){
-      this.adminService.upadtepassword(user.id,this.updatepassword.get('newpassword')?.value).subscribe(updatedUser=>{
-        localStorage.setItem("session",JSON.stringify(updatedUser))
+      this.adminService.upadtepassword(user.id,this.updatepassword.get('newpassword')?.value).subscribe(updatedAdmin=>{
+        localStorage.setItem("session",JSON.stringify(updatedAdmin))
       });}
       else alert("invalid password")
       this.updatepassword.reset();

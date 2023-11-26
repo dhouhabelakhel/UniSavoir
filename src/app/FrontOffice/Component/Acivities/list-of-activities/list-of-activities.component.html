@@ -1,6 +1,6 @@
 <div class="activities">
   <div class="hero-content">
-    <h1 style="font-size: 3vw;">Welcome to Training Club</h1>
+    <h1 style="font-size: 3vw;">Welcome to knowledge Club</h1>
     <p style="font-size: 1.3vw;">Unlock Your Potential with Our Diverse Training Programs</p>
     <a class="cta-button">Explore Programs</a>
   </div>
@@ -19,7 +19,7 @@
   <hr style="margin-left: 4%;margin-right: 4%;margin-bottom: 4%;">
   <div class="act">
     <ng-container>
-      <ng-container *ngFor="let act of activities">
+      <ng-container *ngFor="let act of activities" class="act">
         <app-activite [activitie]="act"></app-activite>
       </ng-container>
     </ng-container>

@@ -1,0 +1,36 @@
+.weather-container {
+    
+   margin-top: 20%;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin: 5px 0;
+  }
+  
+  h3 {
+    font-size: 1rem;
+    margin: 5px 0;
+    opacity: 0.8;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

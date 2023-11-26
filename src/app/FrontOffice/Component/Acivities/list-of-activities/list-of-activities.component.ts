@@ -29,6 +29,7 @@ export class ListOfActivitiesComponent implements OnInit {
 searchact(){
   this.activities=[];
 this.activitiesService.search(this.search,this.category).subscribe(data=>{
+  
   this.activities=data;
 })
 }

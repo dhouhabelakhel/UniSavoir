@@ -1,30 +1,35 @@
-
 <div class="card">
-  <h1 style="text-align: center;font-size: x-large;">{{activitie.intitule|pipePerso}}</h1>
-  <img [src]="activitie.photo" >
+  <a (click)="retour()" class="back-button"><i class="fas fa-arrow-left"></i> </a>
 
-  <h3>{{activitie.description}}</h3>
-  <p><span *ngIf="activitie.prix==0" class="text-success" style="font-weight: bold;">FREE</span><span *ngIf="activitie.prix>0">{{activitie.prix}}DT</span>
-     | {{activitie.nbplace}} places</p>
-  <p *ngIf="activitie.nbplace>0" class="text-success" style="font-weight: bold;">Available</p>
-  <p *ngIf="activitie.nbplace==0" class="text-danger" style="font-weight: bold;">Not available</p>
-   Certification : <input type="checkbox" [checked]="activitie.Certification" disabled>
-  <p><span style="font-weight: bold;">Start Date :</span> {{activitie.date_debut | date}}</p>
-  <p><span style="font-weight: bold;">Duration :</span> {{activitie.duree}}</p>
- <div *ngIf="activitie.skills">
-  <h3>Skills :</h3>
-  <ul class="list-group" >
-    <li *ngFor="let skill of activitie.skills" class="list-group-item">
-      {{skill.skillName}} - {{skill.niveau}}
-    </li>
-  </ul>
-</div>
-<div *ngIf="activitie.formateur">
-  <h3>Formateur :</h3>
-  <ul class="list-group mt-2">
-    <li *ngFor="let formateur of activitie.formateur" class="list-group-item">
-      {{formateur.nomComplet}}--{{formateur.intitule}}
-    </li>
-  </ul>
-</div>
+  <h1 class="card-title">{{ activitie.intitule | pipePerso }}</h1>
+  <img [src]="activitie.photo">
+
+  <h3>{{ activitie.description }}</h3>
+  <p>
+    <span *ngIf="activitie.prix == 0" class="text-success" style="font-weight: bold;">FREE</span>
+    <span *ngIf="activitie.prix > 0">{{ activitie.prix }}DT</span> | {{ activitie.nbplace }} places
+  </p>
+  <p *ngIf="activitie.nbplace > 0" class="text-success" style="font-weight: bold;">Available</p>
+  <p *ngIf="activitie.nbplace == 0" class="text-danger" style="font-weight: bold;">Not available</p>
+  Certification : <input type="checkbox" [checked]="activitie.Certification" disabled>
+  <p><span style="font-weight: bold;">Start Date :</span> {{ activitie.date_debut | date }}</p>
+  <p><span style="font-weight: bold;">Duration :</span> {{ activitie.duree }}</p>
+
+  <div *ngIf="activitie.skills">
+    <h3>Skills :</h3>
+    <ul class="list-group">
+      <li *ngFor="let skill of activitie.skills" class="list-group-item">
+        {{ skill.skillName }} - {{ skill.niveau }}
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="activitie.formateur">
+    <h3>Formateur :</h3>
+    <ul class="list-group mt-2">
+      <li *ngFor="let formateur of activitie.formateur" class="list-group-item">
+        {{ formateur.nomComplet }}--{{ formateur.intitule }}
+      </li>
+    </ul>
+  </div>
 </div>

@@ -9,6 +9,6 @@ export class PipePersoPipe implements PipeTransform {
 
     const words = value.split(' ');
     const transformedWords = words.map(word => word.charAt(0).toUpperCase() + word.slice(1));
-    return `*** ${transformedWords.join(' ')} ***`;
+    return ` ${transformedWords.join(' ')} `;
   } }
 

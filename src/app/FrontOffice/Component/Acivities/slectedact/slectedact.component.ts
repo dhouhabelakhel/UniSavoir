@@ -28,5 +28,6 @@ ngOnInit(): void {
      this.router.navigate(['/activities']);
  
    }
+   
 
 }

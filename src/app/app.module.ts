@@ -45,6 +45,9 @@ import { UpdateAdminProfilComponent } from './BackOffice/Component/profile/updat
 import { UpdateAdminPasswordComponent } from './BackOffice/Component/profile/update-admin-password/update-admin-password.component';
 import { PipePersoPipe } from './pipe-perso.pipe';
 import { HelloPipe } from './hello.pipe';
+import { DepartementComponent } from './FrontOffice/Component/departement/departement.component';
+import { WeatherComponent } from './FrontOffice/Component/weather/weather.component';
+import { WeatherPipe } from './weather.pipe';
 
 @NgModule({
   declarations: [
@@ -85,6 +88,9 @@ import { HelloPipe } from './hello.pipe';
     UpdateAdminPasswordComponent,
     PipePersoPipe,
     HelloPipe,
+    DepartementComponent,
+    WeatherComponent,
+    WeatherPipe,
   ],
   imports: [
     FormsModule, 

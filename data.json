@@ -75,7 +75,7 @@
       "userName": "dhouha",
       "password": "Dhouha1307@",
       "email": "dhouhabelakhel2001@gmail.com",
-      "fullName": "noura belakhel",
+      "fullName": "noura ",
       "adresse": "soukra,ariana",
       "phoneNumber": "25079968",
       "Role": "admin",
@@ -208,11 +208,49 @@
       "userName": "mitem",
       "password": "mitem",
       "email": "mitem@email.com",
-      "fullName": "",
+      "fullName": "mitem chat",
       "adresse": "",
       "phoneNumber": null,
       "Role": "user",
-      "listOfActivities": [],
+      "listOfActivities": [
+        {
+          "intitule": "intiation web",
+          "photo": "assets/v.jpg",
+          "description": "",
+          "prix": "0",
+          "nbplace": 81,
+          "certification": null,
+          "date_debut": "2023-12-13",
+          "duree": "2 semaines",
+          "categorie": "devloppement web",
+          "lieu": "tunis",
+          "skills": [
+            {
+              "skillName": "angular",
+              "niveau": "avancee"
+            },
+            {
+              "skillName": "spingboot",
+              "niveau": "intiation"
+            },
+            {
+              "skillName": "css",
+              "niveau": "avance"
+            }
+          ],
+          "formateur": [
+            {
+              "nomComplet": "dhouha",
+              "intitule": "ingenieur"
+            },
+            {
+              "nomComplet": "aziz",
+              "intitule": null
+            }
+          ],
+          "id": 1
+        }
+      ],
       "id": 10
     }
   ],
@@ -222,7 +260,7 @@
       "photo": "assets/v.jpg",
       "description": "",
       "prix": "0",
-      "nbplace": 81,
+      "nbplace": 80,
       "certification": null,
       "date_debut": "2023-12-13",
       "duree": "2 semaines",
