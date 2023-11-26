@@ -74,8 +74,8 @@
     {
       "userName": "dhouha",
       "password": "Dhouha1307@",
-      "email": "dhouhabelakhel2001@gmail.com",
-      "fullName": "noura ",
+      "email": "dhouha@gmail.com",
+      "fullName": "noura",
       "adresse": "soukra,ariana",
       "phoneNumber": "25079968",
       "Role": "admin",
@@ -195,16 +195,6 @@
       "id": 8
     },
     {
-      "userName": "angular",
-      "password": "angular",
-      "email": "",
-      "fullName": "",
-      "adresse": "",
-      "phoneNumber": null,
-      "Role": "user",
-      "id": 9
-    },
-    {
       "userName": "mitem",
       "password": "mitem",
       "email": "mitem@email.com",
@@ -261,7 +251,7 @@
       "description": "",
       "prix": "0",
       "nbplace": 80,
-      "certification": null,
+      "certification": true,
       "date_debut": "2023-12-13",
       "duree": "2 semaines",
       "categorie": "devloppement web",
@@ -360,6 +350,61 @@
       "skills": [],
       "formateur": [],
       "id": 34
+    },
+    {
+      "intitule": "",
+      "photo": "",
+      "description": "",
+      "prix": "",
+      "nbplace": "",
+      "certification": "",
+      "date_debut": "",
+      "duree": "",
+      "categorie": "",
+      "lieu": "",
+      "skills": [],
+      "formateur": [],
+      "id": 35
+    },
+    {
+      "intitule": "",
+      "photo": "",
+      "description": "",
+      "prix": "",
+      "nbplace": "",
+      "certification": "",
+      "date_debut": "",
+      "duree": "",
+      "categorie": "",
+      "lieu": "",
+      "skills": [
+        {
+          "skillName": "",
+          "niveau": ""
+        }
+      ],
+      "formateur": [
+        {
+          "nomComplet": "",
+          "intitule": ""
+        }
+      ],
+      "id": 36
+    },
+    {
+      "intitule": "",
+      "photo": "",
+      "description": "",
+      "prix": "",
+      "nbplace": "",
+      "certification": "",
+      "date_debut": "",
+      "duree": "",
+      "categorie": "",
+      "lieu": "",
+      "skills": [],
+      "formateur": [],
+      "id": 37
     }
   ]
 }

@@ -11,7 +11,7 @@
   </p>
   <p *ngIf="activitie.nbplace > 0" class="text-success" style="font-weight: bold;">Available</p>
   <p *ngIf="activitie.nbplace == 0" class="text-danger" style="font-weight: bold;">Not available</p>
-  Certification : <input type="checkbox" [checked]="activitie.Certification" disabled>
+  <p *ngIf="activitie.certification"  class="text-success" style="font-weight: bold;">Certified</p>
   <p><span style="font-weight: bold;">Start Date :</span> {{ activitie.date_debut | date }}</p>
   <p><span style="font-weight: bold;">Duration :</span> {{ activitie.duree }}</p>
 

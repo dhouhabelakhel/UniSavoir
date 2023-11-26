@@ -9,7 +9,7 @@ export class Activite {
                public  description:string,
                public   prix: number,
                public  nbplace:number,
-               public  Certification: boolean,
+               public  certification: boolean,
                public   date_debut: Date,
                public  duree: string,
                public  skills: Skills[],

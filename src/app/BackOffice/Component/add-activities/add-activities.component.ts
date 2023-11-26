@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { ActivitiesService } from 'src/app/services/activities.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ActivitiesService } from 'src/app/services/activities.service';
 })
 export class AddActivitiesComponent implements OnInit {
   addAct!:FormGroup;
-  constructor(private formBuilder:FormBuilder,private activitiesService:ActivitiesService){}
+  constructor(private formBuilder:FormBuilder,private activitiesService:ActivitiesService,private dialogRef: MatDialogRef<AddActivitiesComponent>){}
   ngOnInit(): void {
     this.addAct = this.formBuilder.group({
       intitule: ['', [Validators.required, Validators.pattern('^[A-Z].*')]],
@@ -54,6 +55,7 @@ export class AddActivitiesComponent implements OnInit {
 
   addActivitie(){
 this.activitiesService.addActivitie(this.addAct.value).subscribe(data=>{console.log(data);
+  this.close();
 });
   }
   public get skills(){
@@ -73,5 +75,8 @@ this.activitiesService.addActivitie(this.addAct.value).subscribe(data=>{console.
 nomComplet:['',Validators.required],
 intitule:[''],
     }))
+  }
+  close(){
+this.dialogRef.close();
   }
 }

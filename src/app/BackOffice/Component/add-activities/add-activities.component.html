@@ -1,74 +1,87 @@
+<div class="container">
+
 <form [formGroup]="addAct" (ngSubmit)="addActivitie()">
     <div class="mb-3">
-        <label for="intitule" class="form-label">Intitule:</label>
-        <input type="text" class="form-control" name="intitule" formControlName="intitule">
+        <label for="intitule" >Titled</label>
+        <input type="text"  name="intitule" formControlName="intitule">
     </div>
 
     <div class="mb-3">
-        <label for="photo" class="form-label">Photo :</label>
-        <input type="file" class="form-control" name="photo" formControlName="photo" (change)="onFileSelected($event)">
+        <label for="photo">Photo </label>
+        <input type="file"  name="photo" formControlName="photo" (change)="onFileSelected($event)">
     </div>
 
     <div class="mb-3">
         <label for="description" class="form-label">Description:</label>
-        <textarea class="form-control" name="description" formControlName="description"></textarea>
+        <textarea  name="description" formControlName="description"></textarea>
     </div>
 
     <div class="mb-3">
-        <label for="prix" class="form-label">Prix:</label>
-        <input type="text" class="form-control" name="prix" formControlName="prix">
+        <label for="prix" >Price</label>
+        <input type="text"  name="prix" formControlName="prix">
     </div>
 
     <div class="mb-3">
-        <label for="nbplace" class="form-label">Nombre de Places:</label>
-        <input type="number" class="form-control" name="nbplace" formControlName="nbplace">
+        <label for="nbplace" >Number of places</label>
+        <input type="number"  name="nbplace" formControlName="nbplace">
     </div>
 
     <div class="mb-3 form-check">
-        <input type="checkbox" class="form-check-input" name="disponible" formControlName="certification">
-        <label class="form-check-label" for="disponible">certification:</label>
+        <input type="checkbox" name="certification" formControlName="certification">
+        <label  for="certification">Certification</label>
     </div>
 
     <div class="mb-3">
-        <label for="date_debut" class="form-label">Date de Début:</label>
-        <input type="date" class="form-control" formControlName="date_debut" name="date_debut">
+        <label for="date_debut" >Start date</label>
+        <input type="date"  formControlName="date_debut" name="date_debut">
     </div>
 
     <div class="mb-3">
-        <label for="duree" class="form-label">Durée:</label>
-        <input type="text" class="form-control" formControlName="duree" name="duree">
+        <label for="duree" >Duration</label>
+        <input type="text"  formControlName="duree" name="duree">
     </div>
 
     <div class="mb-3">
-        <label for="categorie" class="form-label">Catégorie:</label>
-        <input type="text" class="form-control" formControlName="categorie" name="categorie">
+        <label for="categorie" class="form-label">Category</label>
+        <input type="text"  formControlName="categorie" name="categorie">
     </div>
 
     <div class="mb-3">
-        <label for="lieu" class="form-label">Lieu:</label>
-        <input type="text" class="form-control" formControlName="lieu" name="lieu">
+        <label for="lieu">Place</label>
+        <input type="text"  formControlName="lieu" name="lieu">
     </div>
     Skills:
     <div formArrayName="skills">
-        <div *ngFor="let skill of skills.controls; let i = index" [formGroupName]="i">
-          <label for="skillName{{i}}">Skill n° {{i+1}}</label>
-          <input type="text" class="form-control" id="skillName{{i}}" formControlName="skillName">
-          <label for="niveau{{i}}">Niveau Skill n° {{i+1}}</label>
+        <div *ngFor="let skill of skills.controls; let i = index" [formGroupName]="i" style="display: flex;flex-direction: row; justify-content: space-between;">
+          <div>
+            <label for="skillName{{i}}">Skill n° {{i+1}}</label>
+            <input type="text" class="form-control" id="skillName{{i}}" formControlName="skillName">
+        </div>
+        <div>
+            <label for="niveau{{i}}">level </label>
           <input type="text" class="form-control" id="niveau{{i}}" formControlName="niveau">
         </div>
-      </div>
-      <input type="button" value="Add" class="btn btn-secondary btn-sm" (click)="AddSkill()"> <br>
-    Formateur:
-    <div formArrayName="formateur">
-        <div *ngFor="let formateur of formateur.controls; let i = index" [formGroupName]="i">
-          <label for="formateur{{i}}">Formateur n° {{i+1}}</label>
-          <input type="text" class="form-control" id="formateur{{i}}" formControlName="nomComplet">
-          <label for="intitule{{i}}">intitule  n° {{i+1}}</label>
-          <input type="text" class="form-control" id="intitule{{i}}" formControlName="intitule">
         </div>
       </div>
-      <input type="button" value="Add" class="btn btn-secondary btn-sm" (click)="AddFormateur()"> <br>
+      <input type="button" value="Add"  (click)="AddSkill()"> <br>
+    Formateur:
+    <div formArrayName="formateur">
+        <div *ngFor="let formateur of formateur.controls; let i = index" [formGroupName]="i" style="display: flex;flex-direction: row; justify-content: space-between;">
+            <div>
+          <label for="formateur{{i}}">Formateur n° {{i+1}}</label>
+          <input type="text" class="form-control" id="formateur{{i}}" formControlName="nomComplet">
+        </div>
+        <div>
+          <label for="intitule{{i}}">Titled  </label>
+          <input type="text" class="form-control" id="intitule{{i}}" formControlName="intitule">
+        </div>
+        </div>
+      </div>
+      <input type="button" value="Add"  (click)="AddFormateur()"> <br>
 
-    
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div style="display: flex;flex-direction: row; justify-content: space-between;">
+    <button type="submit" >Add Activitie</button>
+    <button type="submit" (click)="close()" >Cancel</button>
+</div>
 </form>
+</div>

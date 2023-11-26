@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
           this.adminService.addAdmin(this.singUp.value).subscribe(data => {
             console.log(data);
             localStorage.setItem("session", JSON.stringify(data));
-            localStorage.setItem("etat", "conected");
+            localStorage.setItem("etat", "conectedUser");
             this.router.navigate(['home']);
           });
         }
@@ -86,11 +86,13 @@ export class LoginComponent implements OnInit {
       (admins) => {
         if (admins && admins.length > 0) {
           localStorage.setItem("session", JSON.stringify(admins[0]));
-          localStorage.setItem("etat", "conected");
-          if (admins[0].Role == "admin")
-            this.router.navigate(['adminhome']);
-          else if (admins[0].Role == "user")
-            this.router.navigate(['home']);
+          
+          if (admins[0].Role == "admin"){
+            localStorage.setItem("etat", "conectedAdmin");
+            this.router.navigate(['adminhome']);}
+          else if (admins[0].Role == "user"){
+          localStorage.setItem("etat", "conectedUser");
+            this.router.navigate(['home']);}
         } else {
           console.log("No user found .");
 

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/services/admin.service';
 import { userType } from '../enum/userType';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-add-admin',
@@ -10,12 +11,12 @@ import { userType } from '../enum/userType';
 })
 export class AddAdminComponent implements OnInit {
   AddAdmin!:FormGroup;
-constructor(private formBuilder:FormBuilder,private adminService:AdminService){}
+constructor(private formBuilder:FormBuilder,private adminService:AdminService,private dialogRef: MatDialogRef<AddAdminComponent>){}
   ngOnInit(): void {
     this.AddAdmin=this.formBuilder.nonNullable.group({
-  userName:[''],
-  password:[''],
- email:[''],
+  userName:['',Validators.required],
+  password:['',[Validators.required]],
+ email:['',[Validators.required,Validators.email]],
 fullName:[''],
 adresse:[''],
 phoneNumber:[],
@@ -31,13 +32,13 @@ Role:['admin']
         }
         else 
         this.adminService.addAdmin(this.AddAdmin.value).subscribe();
+        this.dialogRef.close();
       })
-        
-        
-     
       
     }
-
+close(){
+  this.dialogRef.close();
+}
 
 
 }

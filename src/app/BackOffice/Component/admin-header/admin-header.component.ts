@@ -13,7 +13,7 @@ export class AdminHeaderComponent {
   openAddForm() {
     const dialogRef = this.dialog.open(AddActivitiesComponent, {
       height: '90%',
-      width:'60%'
+      width:'50%'
     });
   }
 }

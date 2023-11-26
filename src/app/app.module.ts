@@ -37,7 +37,6 @@ import { AddAdminComponent } from './BackOffice/Component/add-admin/add-admin.co
 import { UserProfilComponent } from './FrontOffice/Component/User/user-profil/user-profil.component';
 import { CalenderComponent } from './FrontOffice/Component/User/calender/calender.component';
 import { EditAdminComponent } from './BackOffice/Component/edit-admin/edit-admin.component';
-import { AddUserComponent } from './BackOffice/Component/add-user/add-user.component';
 import { UserInformationsComponent } from './FrontOffice/Component/User/user-informations/user-informations.component';
 import { UserupdatePasswordComponent } from './FrontOffice/Component/User/edit/userupdate-password/userupdate-password.component';
 import { UserupdateInformationsComponent } from './FrontOffice/Component/User/edit/userupdate-informations/userupdate-informations.component';
@@ -80,7 +79,6 @@ import { WeatherPipe } from './weather.pipe';
     UserProfilComponent,
     CalenderComponent,
     EditAdminComponent,
-    AddUserComponent,
     UserInformationsComponent,
     UserupdatePasswordComponent,
     UserupdateInformationsComponent,

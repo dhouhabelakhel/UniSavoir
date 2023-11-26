@@ -23,9 +23,13 @@ import { UserupdateInformationsComponent } from './FrontOffice/Component/User/ed
 import { UserupdatePasswordComponent } from './FrontOffice/Component/User/edit/userupdate-password/userupdate-password.component';
 import { UpdateAdminProfilComponent } from './BackOffice/Component/profile/update-admin-profil/update-admin-profil.component';
 import { UpdateAdminPasswordComponent } from './BackOffice/Component/profile/update-admin-password/update-admin-password.component';
+import { adminauthGuard } from './guard/adminauth.guard';
+import { logoutGuard } from './guard/logout.guard';
+import { homepageGuard } from './guard/homepage.guard';
+import { loginpageGuard } from './guard/loginpage.guard';
 
 const routes: Routes = [
-  {path:'',component:PageAcceuilComponent,
+  {path:'',component:PageAcceuilComponent,canActivate:[homepageGuard],
  children:[
   {path:'',title:'Home',component:CorpHomePageComponent},
 
@@ -48,8 +52,8 @@ children:[
  ]
 },
 { path: 'selectedact/:id', title: 'details', component: SlectedactComponent },
-{path:'login',title:'LOGIN',component:LoginComponent},
-{path:'adminhome',title:'AdminHome',component:AdminHomepageComponent,
+{path:'login',title:'LOGIN',component:LoginComponent,canActivate:[loginpageGuard]},
+{path:'adminhome',title:'AdminHome',component:AdminHomepageComponent,canActivate:[adminauthGuard],canDeactivate:[logoutGuard],
 children:[
   {path:'',title:'dashboard',component:DashboardComponent},
   {path:'dashboard',title:'dashboard',component:DashboardComponent},

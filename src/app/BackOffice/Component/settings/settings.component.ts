@@ -4,7 +4,7 @@ import { Admin } from 'src/app/classes/admin';
 import { AdminService } from 'src/app/services/admin.service';
 import { AddAdminComponent } from '../add-admin/add-admin.component';
 import { EditAdminComponent } from '../edit-admin/edit-admin.component';
-import { AddUserComponent } from '../add-user/add-user.component';
+import { User } from 'src/app/classes/user';
 
 @Component({
   selector: 'app-settings',
@@ -22,17 +22,23 @@ userColum: string[] = ['id', 'name','email','actions'];
 this.adminService.getAdmins().subscribe(admins=>{
   this.users=admins.filter(admin=>admin.Role=="user");
   this.admins=admins.filter(admin=>admin.Role=="admin");})
-  }
+  this.dialog.afterAllClosed.subscribe(() => {
+    this.adminService.getAdmins().subscribe(admins => {
+      this.users = admins.filter(admin => admin.Role == "user");
+      this.admins = admins.filter(admin => admin.Role == "admin");
+    });
+  });
+}
+
+  
   openAddAdminDialog(){
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '100%'; 
-    this.dialog.open(AddAdminComponent,dialogConfig);
+    const dialogRef = this.dialog.open(AddAdminComponent, {
+      height: '90%',
+      width:'60%'
+    });
+
   }
-  openAddUser(){
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = '100%'; 
-    this.dialog.open(AddUserComponent,dialogConfig);
-  }
+
 
   deleteAdmin(id:number){
     this.adminService.deleteAdmin(id).subscribe(() => {
