@@ -55,7 +55,8 @@ textarea:focus {
     border-color: #20020e;
 }
 
-button[type="submit"] {
+button[type="submit"]
+{
     width: 40%;
     padding: 0.5rem;
     margin-top: 1rem;

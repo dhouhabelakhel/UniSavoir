@@ -63,7 +63,7 @@ onFileSelected(event: any) {
           });
         };
       } else {
-        console.log('Seules les images JPEG, PNG ou GIF sont autorisées.');
+        console.log('Only JPEG, PNG or GIF images are allowed.');
       }
     }
   }

@@ -67,7 +67,8 @@ export class LoginComponent implements OnInit {
     this.adminService.getAdminByUserName(this.singUp.get('userName')?.value).subscribe(
       (users) => {
         if (users && users.length > 0)
-          alert("existe deja!!")
+        this.adminService.showAlert("Already exists!!");
+          
 
         else {
           this.adminService.addAdmin(this.singUp.value).subscribe(data => {
@@ -94,7 +95,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("etat", "conectedUser");
             this.router.navigate(['home']);}
         } else {
-          console.log("No user found .");
+          this.adminService.showAlert("No user found .");
+        
 
         }
       },

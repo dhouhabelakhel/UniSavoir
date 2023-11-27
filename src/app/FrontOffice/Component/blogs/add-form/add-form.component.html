@@ -10,25 +10,23 @@
              
             </div>
             <div>
-            <div *ngIf="isValidTitle()" class="alert alert-danger">
-                Le titre doit avoir au moins 6 caractères et commencer par une majuscule.
-              </div>
-              <div *ngIf="isValidTitleLength()" class="alert alert-danger">
-                Le titre doit avoir au moins 6 caractères 
-              </div>
-              <div *ngIf=" isValidTitlePattren()" class="alert alert-danger">
-                Le titre doit  commencer par une majuscule.
-              </div>
+            <div *ngIf="isValidTitle()" style="color: #bd0b49;text-align: center;">
+              The title must be at least 6 characters long and start with a capital letter.              </div>
+              <div *ngIf="isValidTitleLength()"style="color: #bd0b49;text-align: center;">
+                The title must be at least 6 characters              </div>
+              <div *ngIf=" isValidTitlePattren()" style="color: #bd0b49;text-align: center;">
+                The title must begin with a capital letter.
+                            </div>
             </div>
             <div class="form-group">
                 <label for="content"  style="font-style: italic;">Blog Content</label>
                 <textarea class="form-control" id="content" rows="6" pInputText title="Enter the blog content"
                      formControlName="content"></textarea>
-                     <div *ngIf=" isValidContent() " class="alert alert-danger">
-                        required
+                     <div *ngIf=" isValidContent() " style="color: #bd0b49;text-align: center;">
+                   Invalid
                      </div>
-                     <div *ngIf="  isValidContentLength() " class="alert alert-danger">
-                       maxlength
+                     <div *ngIf="  isValidContentLength() " style="color: #bd0b49;text-align: center;">
+                      you have exceeded the maximum length
                      </div>
                      
             </div>

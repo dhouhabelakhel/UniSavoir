@@ -55,7 +55,7 @@ export class AddActivitiesComponent implements OnInit {
 
   addActivitie(){
 this.activitiesService.addActivitie(this.addAct.value).subscribe(data=>{console.log(data);
-  this.close();
+  this.dialogRef.close();
 });
   }
   public get skills(){
@@ -76,7 +76,56 @@ nomComplet:['',Validators.required],
 intitule:[''],
     }))
   }
-  close(){
-this.dialogRef.close();
-  }
+ 
+
+
+ 
+ isIntituleValid(): boolean {
+  const intitule = this.addAct.get('intitule');
+  return !!intitule?.valid || !!intitule?.untouched;
+}
+
+isDescriptionValid(): boolean {
+  const description = this.addAct.get('description');
+  return !!description?.valid || !!description?.untouched;
+}
+
+isPrixValid(): boolean {
+  const prix = this.addAct.get('prix');
+  return !!prix?.valid || !!prix?.untouched;
+}
+
+isNbplaceValid(): boolean {
+  const nbplace = this.addAct.get('nbplace');
+  return !!nbplace?.valid || !!nbplace?.untouched;
+}
+
+isDureeValid(): boolean {
+  const duree = this.addAct.get('duree');
+  return !!duree?.valid || !!duree?.untouched;
+}
+
+isCategorieValid(): boolean {
+  const categorie = this.addAct.get('categorie');
+  return !!categorie?.valid || !!categorie?.untouched;
+}
+
+isLieuValid(): boolean {
+  const lieu = this.addAct.get('lieu');
+  return !!lieu?.valid || !!lieu?.untouched;
+}
+
+areSkillsValid(): boolean {
+  const skillsArray = this.addAct.get('skills') as FormArray;
+  return skillsArray?.valid || skillsArray?.untouched;
+}
+
+areFormateursValid(): boolean {
+  const formateurArray = this.addAct.get('formateur') as FormArray;
+  return formateurArray?.valid || formateurArray?.untouched;
+}
+
+close(){
+  this.dialogRef.close();
+    }
 }

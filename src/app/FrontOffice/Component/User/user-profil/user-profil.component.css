@@ -38,6 +38,7 @@
     margin-left: 200px; 
     border-left: 2px solid rgba(141, 11, 57, 0.9); 
     padding-left: 20px;
+    z-index: 1;
 }
 
 .profil .edit-profil:hover .extra-content {

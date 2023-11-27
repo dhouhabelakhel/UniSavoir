@@ -1,5 +1,5 @@
-<div class="ui container" style="margin-top: 50px;">
-    <div class="ui card">
+<div  style="margin-top: 50px;width: 90%;padding: 2%;">
+    
       <div class="content">
         <form [formGroup]="editAdmin" (ngSubmit)="updateAdmin()" class="ui form" >
           <div class="field">
@@ -10,11 +10,17 @@
           <div class="field">
             <label for="password">Password</label>
             <input type="password" formControlName="password" placeholder="Password">
+            <div *ngIf="isValidPassword()">
+              Invalid password
+                          </div>
           </div>
   
           <div class="field">
             <label for="email">Email</label>
             <input type="email" formControlName="email" placeholder="Email">
+            <div *ngIf="isValidEmail()">
+              Invalid Email
+                          </div>
           </div>
   
           <div class="field">
@@ -30,6 +36,9 @@
           <div class="field">
             <label for="phoneNumber">Phone Number</label>
             <input type="tel" formControlName="phoneNumber" placeholder="Phone Number">
+            <div *ngIf="isValidPhone()" >
+              Invalid Phone Number
+            </div>
           </div>
         
           <select formControlName="Role" class="field">
@@ -40,6 +49,6 @@
           <button type="button" class="ui button" (click)="close()">Cancel</button>
         </form>
       </div>
-    </div>
+  
   </div>
   

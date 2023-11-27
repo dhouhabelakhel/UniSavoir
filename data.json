@@ -85,7 +85,7 @@
       "userName": "zina",
       "password": "Zinachatte1@",
       "email": "zina@email.com",
-      "fullName": "zina chatte",
+      "fullName": "zina ",
       "adresse": "soukraa",
       "phoneNumber": "23060847",
       "Role": "user",
@@ -335,76 +335,6 @@
       "categorie": ",kl,k",
       "lieu": ",kl,njn",
       "id": 33
-    },
-    {
-      "intitule": "",
-      "photo": "",
-      "description": "bndcbhjcb hbc lb c hjbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb bbbbbbbbbbbbbb bbbbbbb b b bb b bbbbbbbbbbbbbb bbbbbbb b b bb bbbbbbbbbbbbbbb bbbbbbb b b bb b bbbbbbbbbbbbbb bbbbbbb b b bb b",
-      "prix": "",
-      "nbplace": "",
-      "certification": "",
-      "date_debut": "",
-      "duree": "",
-      "categorie": "",
-      "lieu": "",
-      "skills": [],
-      "formateur": [],
-      "id": 34
-    },
-    {
-      "intitule": "",
-      "photo": "",
-      "description": "",
-      "prix": "",
-      "nbplace": "",
-      "certification": "",
-      "date_debut": "",
-      "duree": "",
-      "categorie": "",
-      "lieu": "",
-      "skills": [],
-      "formateur": [],
-      "id": 35
-    },
-    {
-      "intitule": "",
-      "photo": "",
-      "description": "",
-      "prix": "",
-      "nbplace": "",
-      "certification": "",
-      "date_debut": "",
-      "duree": "",
-      "categorie": "",
-      "lieu": "",
-      "skills": [
-        {
-          "skillName": "",
-          "niveau": ""
-        }
-      ],
-      "formateur": [
-        {
-          "nomComplet": "",
-          "intitule": ""
-        }
-      ],
-      "id": 36
-    },
-    {
-      "intitule": "",
-      "photo": "",
-      "description": "",
-      "prix": "",
-      "nbplace": "",
-      "certification": "",
-      "date_debut": "",
-      "duree": "",
-      "categorie": "",
-      "lieu": "",
-      "skills": [],
-      "formateur": [],
-      "id": 37
     }
   ]
 }

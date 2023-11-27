@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Admin } from 'src/app/classes/admin';
 import { userType } from '../enum/userType';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AdminService } from 'src/app/services/admin.service';
 
 @Component({
@@ -26,7 +26,7 @@ export class EditAdminComponent implements OnInit {
  email:[this.selectedAdmin.email],
 fullName:[this.selectedAdmin.fullName],
 adresse:[this.selectedAdmin.adresse],
-phoneNumber:[this.selectedAdmin.phoneNumber],
+phoneNumber:[this.selectedAdmin.phoneNumber,[Validators.minLength(8),Validators.pattern(/^[0-9]+$/)]],
 Role:[userType.Admin]
     })
     }
@@ -39,5 +39,28 @@ Role:[userType.Admin]
     }
     close(){
       this.dialogRef.close();
+    }
+
+
+    public get Username(){
+      return this.editAdmin.get('userName');
+    }
+    public get password(){
+      return this.editAdmin.get('password');
+    }
+    public get email(){
+      return this.editAdmin.get('email');
+    }
+    public get phone(){
+      return this.editAdmin.get('phoneNumber');
+    }
+    isValidPassword():boolean{
+      return (this.password?.errors?.['required']||this.password?.errors?.['pattern']) && this.password.touched;
+     } 
+    isValidEmail():boolean{
+      return (this.email?.errors?.['required']||this.email?.errors?.['email']) && this.email.touched;
+     }
+     isValidPhone(){
+      return (this.phone?.errors?.['minlength'] ||this.phone?.errors?.['pattern']) && this.phone.touched;
     }
 }

@@ -5,6 +5,8 @@ import { Observable,  mergeMap, throwError } from 'rxjs';
 import { Admin } from '../classes/admin';
 import { Activite } from '../classes/activite';
 import { User } from '../classes/user';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+
 const URL = 'http://localhost:3000/users';
 
 @Injectable({
@@ -13,7 +15,7 @@ const URL = 'http://localhost:3000/users';
 export class AdminService {
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private snackBar: MatSnackBar) {}
  
 
  
@@ -65,13 +67,22 @@ return this.http.put<Admin[]>(URL+"/"+id,admin);
       mergeMap((user: User) => {
         const index = user.listOfActivities.findIndex(activity => activity.id === activityId);
         if (index !== -1) {
-          user.listOfActivities.splice(index, 1); // Retire l'activité de la liste
-          return this.http.put<User>(`${URL}/${userId}`, user); // Met à jour l'utilisateur
+          user.listOfActivities.splice(index, 1); 
+          return this.http.put<User>(`${URL}/${userId}`, user); 
         } else {
-          return throwError('Activity not found'); // Retourne une erreur si l'activité n'est pas trouvée dans la liste
+          return throwError('Activity not found'); 
         }
       })
     );
   }
-  
+  openAlert(message: string, action: string = 'Close', config?: MatSnackBarConfig) {
+    this.snackBar.open(message, action, config);
+  }
+  showAlert(msg:string) {
+   this.openAlert(msg, 'Close', {
+      duration: 3000, 
+      horizontalPosition: 'center', 
+      verticalPosition: 'top' 
+    });
+  }
 }

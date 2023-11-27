@@ -9,13 +9,13 @@
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="Username" name="username" pInputText title="Enter your username" formControlName="username">
                 </div>
-                <div *ngIf="isValidLogInUsername()" style="color: red;">invalid username</div>
+                <div *ngIf="isValidLogInUsername()" style="color:  #bd0b49;">Invalid username</div>
 
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" name="password" placeholder="Password" pInputText title="Enter your password" formControlName="password" >
                 </div>
-                <div *ngIf="isValidLogInPassword()" style="color: red;">invalid password</div>
+                <div *ngIf="isValidLogInPassword()" style="color: #bd0b49;">Invalid password</div>
                 <input type="submit" value="Login" class="btn" [disabled]="singIn.invalid" >
                 <p class="social-text">Or Sign in with social platform</p>
                 <div class="social-media">
@@ -38,23 +38,26 @@
                 <div class="input-field">
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="Username" formControlName="userName">
-                    <div *ngIf="isValidName()">
-                        invalid name
-                    </div>
+                    
+                </div>
+                <div *ngIf="isValidName()" style="color: #bd0b49;">
+                    Invalid Username
                 </div>
                 <div class="input-field">
                     <i class="fas fa-envelope"></i>
                     <input type="text" placeholder="Email" formControlName="email">
-                    <div *ngIf="isValidEmail()">
-                        invalid email
-                    </div>
+                   
+                </div>
+                <div *ngIf="isValidEmail()" style="color: #bd0b49;">
+                    Invalid Email
                 </div>
                 <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder="Password" formControlName="password">
-                    <div *ngIf="isValidPass()">
-                        invalid password
-                    </div>
+                  
+                </div>
+                <div *ngIf="isValidPass()" style="color: #bd0b49;">
+                    Invalid Password
                 </div>
                 <input type="submit" value="Sign up" class="btn" [disabled]="singUp.invalid">
                 <p class="social-text">Or Sign in with social platform</p>

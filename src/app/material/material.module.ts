@@ -14,13 +14,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [],
   imports: [
     MatNativeDateModule,
     MatDatepickerModule,
-  
+    MatSnackBarModule ,
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
@@ -38,7 +40,7 @@ import { MatNativeDateModule } from '@angular/material/core';
   exports: [
     MatNativeDateModule,
     MatDatepickerModule,
-   
+    MatSnackBarModule ,
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,

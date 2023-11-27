@@ -42,7 +42,7 @@ return this.confpass?.errors?.['passwordMismatch'] && this.confpass?.dirty;
       this.adminService.upadtepassword(user.id,this.updatepassword.get('newpassword')?.value).subscribe(updatedAdmin=>{
         localStorage.setItem("session",JSON.stringify(updatedAdmin))
       });}
-      else alert("invalid password")
+      this.adminService.showAlert("invalid password");
       this.updatepassword.reset();
     }
   }

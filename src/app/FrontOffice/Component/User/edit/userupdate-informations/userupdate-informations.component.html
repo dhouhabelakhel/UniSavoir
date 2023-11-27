@@ -14,22 +14,22 @@
       <div class="mb-3">
         <label for="email" >Email</label>
         <input type="email"  id="email" formControlName="email">
-        <div *ngIf="isValidEmail()">
-          email invalid
+        <div *ngIf="isValidEmail()" style="color: #bd0b49;text-align: center;">
+           Invalid Email
         </div>
       </div>
       <div class="mb-3">
         <label for="email" class="form-label">adresse</label>
         <textarea  cols="30" rows="10"  formControlName="adresse"></textarea>
-      <div *ngIf="isValidAdresse()">
-        invalid adresse
+      <div *ngIf="isValidAdresse()" style="color: #bd0b49;text-align: center;">
+        Invalid Adresse
       </div>
       </div>
       <div class="mb-3">
         <label class="form-label">Phone</label>
         <input type="tel"   formControlName="phoneNumber">
-      <div *ngIf="isValidPhone()">
-        invalid phone number
+      <div *ngIf="isValidPhone()" style="color: #bd0b49;text-align: center;">
+        Invalid Phone Number
       </div>
 
       </div>

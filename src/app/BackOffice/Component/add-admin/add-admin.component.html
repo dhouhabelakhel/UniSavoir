@@ -1,20 +1,28 @@
-<div class="ui container" style="margin-top: 50px;">
-    <div class="ui card">
+<div style="margin-top: 50px;width: 90%;padding: 5%;">
       <div class="content">
         <form [formGroup]="AddAdmin" (ngSubmit)="addAdmin()" class="ui form">
           <div class="field">
             <label for="userName">Username</label>
             <input type="text" formControlName="userName" placeholder="Username">
+            <div *ngIf="isValidUser()">
+Invalid username
+            </div>
           </div>
   
           <div class="field">
             <label for="password">Password</label>
             <input type="password" formControlName="password" placeholder="Password">
+            <div *ngIf="isValidPassword()">
+              Invalid password
+                          </div>
           </div>
   
           <div class="field">
             <label for="email">Email</label>
             <input type="email" formControlName="email" placeholder="Email">
+            <div *ngIf="isValidEmail()">
+              Invalid email
+                          </div>
           </div>
   
           <div class="field">
@@ -30,17 +38,17 @@
           <div class="field">
             <label for="phoneNumber">Phone Number</label>
             <input type="tel" formControlName="phoneNumber" placeholder="Phone Number">
-          </div>
-          <div >
-            <label for="Role">Role</label>
-            <input type="text" formControlName="Role" readonly >
+            <div *ngIf="isValidPhone()" >
+              Invalid Phone Number
+            </div>
           </div>
          
+         
   
-          <button type="submit" class="ui primary button" >Submit</button>
-          <button type="button" class="ui button" (click)="close()">Cancel</button>
+          <button type="submit" style="background-color: black;color: white;font-size: 100%;" >Submit</button>
+          <input type="button" style="background-color: black;color: white;font-size: 100%;" (click)="close()" value="Cancel">
         </form>
       </div>
-    </div>
+ 
   </div>
   

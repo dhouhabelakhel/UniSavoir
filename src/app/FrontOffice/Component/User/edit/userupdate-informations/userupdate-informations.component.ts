@@ -23,7 +23,7 @@ export class UserupdateInformationsComponent implements OnInit {
       email: [this.user?.email,Validators.email],
       fullName: [this.user?.fullName],
       adresse: [this.user?.adresse,Validators.maxLength(100)],
-      phoneNumber: [this.user?.phoneNumber,Validators.minLength(8)],
+      phoneNumber: [this.user?.phoneNumber,[Validators.minLength(8),Validators.pattern(/^[0-9]+$/)]],
     
     });
    }
@@ -41,7 +41,7 @@ isValidEmail(){
   return this.email?.errors?.['email'] && this.email.dirty;
 }
 isValidPhone(){
-  return this.phone?.errors?.['minlength'] && this.phone.dirty;
+  return (this.phone?.errors?.['minlength'] ||this.phone?.errors?.['pattern']) && this.phone.dirty;
 }
 isValidAdresse(){
   return this.adresse?.errors?.['maxlength'] && this.adresse.dirty;

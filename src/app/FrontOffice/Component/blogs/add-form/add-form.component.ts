@@ -22,7 +22,7 @@ export class AddFormComponent implements OnInit{
     this.addblog=this.formBuilder.group({
       title:['',[Validators.minLength(6),Validators.required,Validators.pattern('^[A-Z].*')]],
       author:[this.user.userName],
-      content:['',[Validators.required,Validators.maxLength(10)]],
+      content:['',[Validators.required,Validators.maxLength(100)]],
       dateBlog:[new Date()]
    })
   }}
