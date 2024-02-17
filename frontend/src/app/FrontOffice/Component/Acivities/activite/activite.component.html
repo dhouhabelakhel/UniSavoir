@@ -1,0 +1,41 @@
+<section class="program-section"  *ngIf="dataloaded">
+  <div class="container"  >
+    <div class="program" style="padding: 2%;" >
+      <img [src]="activitie.photo" class="program-image">
+      <div class="program-info">
+        <h3>{{ activitie.intitule | uppercase }}</h3>
+        <p>{{ activitie.description }}</p>
+        <div style="margin-left: 25%;margin-top: 10%; display: flex;justify-content: space-around;">
+        <a class="cta-button" (click)="openAct()" style="margin-right: 1%;">See More</a>
+        <input type="button" class="cta-button" (click)="Subscribe()" [disabled]="Subscribed"  value="Subscribe">
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="program-section"  *ngIf="!dataloaded">
+  <div class="container"   >
+    <div class="program" style="padding: 2%;" aria-hidden="true">
+      <div class="placeholder-image"></div>
+      <div class="program-info">
+       <span class="placeholder col-6" style="margin-left: 5%;"></span>
+       <span class="placeholder col-6" style="margin-left: 6%;"></span>
+       <span class="placeholder col-6" style="margin-left: 7%;"></span>
+
+        <div style="margin-left: 25%;margin-top: 10%; display: flex;justify-content: space-around;">
+        <a  aria-disabled="true" disabled class="cta-button disabled placeholder col-6" style="margin-right: 1%;" ></a>
+        <input type="button" aria-disabled="true" disabled class="cta-button disabled placeholder col-6" >
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center" style="margin-top: 20%;margin-bottom: 20%;">
+    <div class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</section>

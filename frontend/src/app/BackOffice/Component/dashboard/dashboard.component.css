@@ -1,0 +1,29 @@
+.container{
+    margin-top: 5%;
+    margin-left: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about{
+    height: 7vw;
+width: 20%;
+background-color: white;
+padding: 2%;
+display: flex;
+align-items: center;
+justify-content: space-around;
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+border-radius: 4%;
+
+}
+.charts
+{
+  display: flex;
+  flex-direction: row;
+  margin-left: 25%;
+  margin-top: 5%;
+  justify-content: space-between;
+}
+

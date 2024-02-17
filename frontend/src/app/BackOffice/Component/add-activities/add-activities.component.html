@@ -1,0 +1,118 @@
+<div class="container">
+
+  <form [formGroup]="addAct" (ngSubmit)="addActivitie()">
+    <div class="mb-3">
+      <label for="intitule">Titled</label>
+      <input type="text" name="intitule" formControlName="intitule">
+      <div *ngIf="!isIntituleValid()" class="alert_notification">The Title is required</div>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="photo">Photo </label>
+      <input type="file" name="photo" formControlName="photo" (change)="onFileSelected($event)">
+
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description:</label>
+      <textarea name="description" formControlName="description"></textarea>
+      <div *ngIf="!isDescriptionValid()" class="alert_notification">The Description is required.</div>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="prix">Price</label>
+      <input type="number" name="prix" formControlName="prix">
+      <div *ngIf="!isPrixValid()" class="alert_notification">The Price  is invalid</div>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="nbplace">Number of places</label>
+      <input type="number" name="nbplace" formControlName="nbplace">
+      <div *ngIf="!isNbplaceValid()" class="alert_notification">The Number of places is invalid</div>
+
+    </div>
+
+    <div class="mb-3 form-check">
+      <label for="certification">Certification</label>
+      <input type="checkbox" name="certification" formControlName="certification">
+    </div>
+
+    <div class="mb-3">
+      <label for="date_debut">Start date</label>
+      <input type="date" formControlName="date_debut" name="date_debut">
+      <div *ngIf="isDateValid()" class="alert_notification">
+        Start Date invalid
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="duree">Duration</label>
+      <input type="text" formControlName="duree" name="duree">
+      <div *ngIf="!isDureeValid()" class="alert_notification">The Duration  is invalid.</div>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="categorie" class="form-label">Category</label>
+      <input type="text" formControlName="categorie" name="categorie">
+      <div *ngIf="!isCategorieValid()" class="alert_notification">The Category is invalid.</div>
+
+    </div>
+
+    <div class="mb-3">
+      <label for="lieu">Location</label>
+      <input type="text" formControlName="lieu" name="lieu">
+      <div *ngIf="!isLieuValid()" class="alert_notification">The Location is invalid.</div>
+
+    </div>
+    Skills
+    <div formArrayName="skills">
+      <div *ngFor="let skill of skills.controls; let i = index" [formGroupName]="i"
+        style="display: flex;flex-direction: row; justify-content: space-between;">
+        <div>
+          <label for="skillName{{i}}">Skill n° {{i+1}}</label>
+          <input type="text" class="form-control" id="skillName{{i}}" formControlName="skillName">
+        </div>
+        <div>
+          <label for="niveau{{i}}">level </label>
+          <input type="text" class="form-control" id="niveau{{i}}" formControlName="niveau">
+        </div>
+        <div>
+          <button type="button"  (click)="removeSkill(i)" class="remove">
+            <i class="bi bi-x"></i>
+        </button>
+        </div>
+      </div>
+    </div>
+    <input type="button" value="Add" (click)="AddSkill()"> <br>
+    Formateur
+    <div formArrayName="formateur">
+      <div *ngFor="let formateur of formateur.controls; let i = index" [formGroupName]="i"
+        style="display: flex;flex-direction: row; justify-content: space-between;">
+        <div>
+          <label for="formateur{{i}}">Formateur n° {{i+1}}</label>
+          <input type="text" class="form-control" id="formateur{{i}}" formControlName="nomComplet">
+
+         </div>
+        <div>
+          <label for="intitule{{i}}">Titled </label>
+          <input type="text" class="form-control" id="intitule{{i}}" formControlName="intitule">
+        </div>
+        <div>
+          <button type="button"  (click)="removeFormateur(i)" class="remove">
+            <i class="bi bi-x"></i>
+        </button>
+        </div>
+      </div>
+    </div>
+    <input type="button" value="Add" (click)="AddFormateur()"> <br>
+
+    <div style="display: flex;flex-direction: row; justify-content: space-between;">
+      <button type="submit" [disabled]=" addAct.invalid">Add Activitie</button>
+      <input type="button" (click)="close()" value="Cancel">
+    </div>
+  </form>
+</div>

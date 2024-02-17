@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="about">
+    <i class="fas fa-users" style="color: #050505;"></i>
+    <span>{{nbusers}}</span>
+    Members
+  </div>
+  <div class="about">
+    <i class="fas fa-graduation-cap" style="color: #050505;"></i>
+    <span>{{nbactivities}}</span>
+    Formation
+  </div>
+  <div class="about">
+    <i class="far fa-calendar-alt" style="color: #050505;"></i>
+    <span>{{nbactivities}}</span>
+    Events
+  </div>
+</div>
+<div style="margin-left: 20%;">
+</div>
+<div style="width: 90%;">
+</div>
+<div class="charts">
+  <div  class="chart">
+    <highcharts-chart
+    *ngIf="ActchartOptions"
+    [Highcharts]="highcharts"
+    [options]="ActchartOptions" style="width: 50%;">
+  </highcharts-chart>
+  </div>
+  <div class="chart">
+    <highcharts-chart
+    *ngIf=" UserchartOptions"
+    [Highcharts]="highcharts"
+    [options]=" UserchartOptions" style="width: 50%;">
+  </highcharts-chart>
+  </div>
+</div>
+
+<app-activities-list></app-activities-list>

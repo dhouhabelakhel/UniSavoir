@@ -1,0 +1,95 @@
+------------------------------------
+Correction Examen TP BD 2021-2022
+------------------------------------
+1.
+onn doit créer la table salle puis la table spectacle puis la table concert et finalement la table billet.
+on doit commencer par les atbles qui contiennent uniquement des clés primaires et puis à fure et à mesure on crée les tables contenant des clés étrangères.
+on ne peut pas crées une clé étrangère qui pointe sur une clé primaire non encore crée.
+------------------------------------
+code de création des tables
+------------------------------------
+create table salle (
+salleid varchar(4) primary key,
+nom varchar(20),
+adresse varchar(10),
+capacité number(4));
+
+create table spectacle(
+spectacleid number(1) primary key,
+Titre varchar(20),
+DateDeb date,
+durée varchar(10),
+salleid varchar(4) references Salle(salleid),
+chanteur varchar(10));
+
+
+create table concert(
+concertid varchar(4)Primary key,
+DateC date,
+heure varchar(20),
+spectacleId number (10) references spectacle(spectacleid));
+
+create table billet(
+billetid varchar(4)Primary key,
+concertid varchar(4) references concert(concertid),
+numplace number(2),
+catégorie varchar(10),
+prix number(10)
+);
+
+
+2.
+pour les insertions de données onn doit suivre aussi le même ordree de création de crétaion des tables
+------------------------------------
+code d'insertion dans la table Salle
+------------------------------------
+insert into Salle values('S123','Louis Vuitton','Paris',2500);
+insert into Salle values('S124','Victor Hugo','Nice',1550);
+insert into Salle values('S125','Voltaire','Paris',2500);
+------------------------------------------
+code d'insertion dans la table Spectacle
+------------------------------------------
+insert into Spectacle values(1,'Spectacle de Paris','12\12\2020','60mn',123,'HUSTON');
+insert into Spectacle values(2,'Spectacle de Nice','11\13\2020','80mn',124,'CARTER');
+------------------------------------------
+code d'insertion dans la table Concert
+------------------------------------------
+insert into Concert values('C100','12\02\2020','10 :00 :00',1);
+insert into Concert values('C101','11\13\2020','12 :00 :00',2);
+------------------------------------------
+code d'insertion dans la table Billet
+------------------------------------------
+insert into Billet values('B150','C100',2,'C1',50);
+insert into Billet values('B151','C100',3,'C-VIP',68);
+insert into Billet values('B152','C101',5,'C2',100);
+
+3.
+a.
+
+select * from salle where adresse = 'Paris';
+
+b. 
+
+select chanteur from spectacle Sp, salle S where
+sp.salleid=s.salleid and nom = 'Louis Vuitton';
+
+c.
+
+select nom from salle 
+where sallid not exist (select salleid from concert c, spectacle s where c.spectacleid=s.spectacleid));
+
+d. 
+
+select titre from spectacle where spectacleid=(select spectacleid from concert where concertid='C100');
+
+e.
+select Titre
+FROM SPECTACLE WHERE spectacleid=(select spectacleid from concert 
+where concertid = (select concertid from billet 
+where prix >= all(select avg(prix) from billet group by billetid)))
+
+
+
+
+
+
