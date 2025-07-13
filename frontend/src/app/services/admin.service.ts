@@ -7,7 +7,7 @@ import { Activite } from '../classes/activite';
 import { User } from '../classes/user';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
-const URL = 'http://localhost:3000/users';
+const URL = 'https://unisavoir-json-server-backend.onrender.com/Users';
 
 @Injectable({
   providedIn: 'root',

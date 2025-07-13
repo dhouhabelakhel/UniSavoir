@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Activite } from '../classes/activite';
-const URL="http://localhost:3000/activities"
+const URL="https://unisavoir-json-server-backend.onrender.com/activities"
 @Injectable({
   providedIn: 'root'
 })

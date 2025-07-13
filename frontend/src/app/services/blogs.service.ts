@@ -3,14 +3,14 @@ import { Injectable } from '@angular/core';
 import { Blog } from '../classes/blog';
 import { Observable, Subject, tap } from 'rxjs';
 
-const URL = 'http://localhost:3000/blogs';
+const URL = 'https://unisavoir-json-server-backend.onrender.com/blogs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogsService {
 
-  
+
 
   constructor(private http: HttpClient) {}
 
